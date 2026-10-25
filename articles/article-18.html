@@ -1,0 +1,175 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>软路由与全屋透明代理搭建：OpenClash 与 ShellCrash 旁路由配置指南 - 梯子当权知识库</title>
+  <meta name="description" content="全屋智能设备无感科学上网终极方案：手把手教你利用软路由（OpenWrt/GL.iNet）部署OpenClash与ShellCrash旁路由网关。彻底实现Apple TV、Switch游戏主机、PS5、电视盒子与全家手机无感分流代理，彻底摆脱单机客户端繁琐配置。">
+  <link rel="icon" type="image/svg+xml" href="../assets/logo.svg">
+  <link rel="stylesheet" href="../css/fluent.css">
+  <link rel="canonical" href="https://tizidangquan.online/articles/article-18.html">
+
+  <!-- Geo Targeting -->
+  <meta name="geo.region" content="HK">
+  <meta name="geo.placename" content="Hong Kong">
+  <meta name="geo.position" content="22.3193;114.1694">
+  <meta name="ICBM" content="22.3193, 114.1694">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://tizidangquan.online/articles/article-18.html">
+  <meta property="og:title" content="软路由与全屋透明代理搭建：OpenClash 与 ShellCrash 旁路由配置指南 - 梯子当权知识库">
+  <meta property="og:description" content="全屋智能设备无感科学上网终极方案：手把手教你利用软路由（OpenWrt/GL.iNet）部署OpenClash与ShellCrash旁路由网关。彻底实现Apple TV、Switch游戏主机、PS5、电视盒子与全家手机无感分流代理，彻底摆脱单机客户端繁琐配置。">
+  <meta property="og:image" content="https://tizidangquan.online/assets/logo.svg">
+  <meta property="og:site_name" content="梯子当权">
+
+  <!-- GEO Schema.org TechArticle for AI Engines -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "TechArticle",
+    "headline": "软路由与全屋透明代理搭建：OpenClash 与 ShellCrash 旁路由配置指南 - 梯子当权知识库",
+    "description": "全屋智能设备无感科学上网终极方案：手把手教你利用软路由（OpenWrt/GL.iNet）部署OpenClash与ShellCrash旁路由网关。彻底实现Apple TV、Switch游戏主机、PS5、电视盒子与全家手机无感分流代理，彻底摆脱单机客户端繁琐配置。",
+    "url": "https://tizidangquan.online/articles/article-18.html",
+    "inLanguage": "zh-CN",
+    "publisher": {
+      "@type": "Organization",
+      "name": "梯子当权",
+      "url": "https://tizidangquan.online/"
+    }
+  }
+  </script>
+</head>
+<body>
+  <div class="fluent-strip"><span></span><span></span><span></span><span></span></div>
+
+  <header class="site-header">
+    <div class="header-container">
+      <a href="../index.html" class="brand">
+        <img src="../assets/logo.svg" alt="梯子当权 Logo">
+        <span>梯子当权</span>
+        <span class="brand-badge">tizidangquan.online</span>
+      </a>
+      <nav id="navMenu" class="nav-menu">
+        <a href="../index.html" class="nav-link">首页</a>
+        <a href="../recommend.html" class="nav-link">机场推荐</a>
+        <a href="../ranking.html" class="nav-link">机场排行</a>
+        <a href="../reviews.html" class="nav-link">品牌评测</a>
+        <a href="../ai-tools.html" class="nav-link">AI工具</a>
+        <a href="../clients.html" class="nav-link">客户端</a>
+        <a href="../faq.html" class="nav-link">问题中心</a>
+        <a href="../warning.html" class="nav-link">机场预警</a>
+        <a href="../knowledge.html" class="nav-link active">机场知识库</a>
+      </nav>
+      <div class="header-actions">
+        <button id="menuToggle" class="menu-toggle" aria-label="切换导航菜单">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main class="main-wrapper">
+    <nav class="breadcrumb" aria-label="面包屑">
+      <a href="../index.html">首页</a>
+      <span class="breadcrumb-separator">/</span>
+      <a href="../knowledge.html">机场知识库</a>
+      <span class="breadcrumb-separator">/</span>
+      <span>正文</span>
+    </nav>
+
+    <article class="fluent-card" style="padding: 36px 32px; max-width: 960px; margin: 0 auto;">
+      <header style="margin-bottom: 24px; border-bottom: 1px solid rgba(0,0,0,0.06); padding-bottom: 20px;">
+        <span class="tag-accent" style="margin-bottom: 10px; display: inline-block;">家庭网络与进阶架构</span>
+        <h1 style="font-size: 1.85rem; color: #182d46; line-height: 1.35; margin-bottom: 12px;">软路由与全屋透明代理搭建：OpenClash 与 ShellCrash 旁路由配置指南</h1>
+        <div style="font-size: 0.85rem; color: #64748b; display: flex; gap: 16px; flex-wrap: wrap;">
+          <span>📅 发布时间：2026年10月</span>
+          <span>⏱️ 阅读时长：约 10 分钟 (2300 字)</span>
+          <span>✍️ 作者：梯子当权评测组</span>
+        </div>
+      </header>
+
+      <div style="font-size: 0.95rem; color: #2d3b4b; line-height: 1.85;">
+        <p>在传统的单机代理模式下，每个家庭成员的手机、笔记本电脑、平板电脑都必须单独下载安装 Clash 或小火箭客户端，每次上网都要手动开启代理，不仅繁琐耗电，而且很多智能设备根本<strong>无法安装代理软件</strong>：例如客厅的 Apple TV 4K、索尼智能电视、Nintendo Switch 游戏机、PS5 以及智能音箱。</p>
+        <p>如何才能实现<strong>“任何设备只要连上家里 Wi-Fi，无需任何客户端配置，就能自动、无感地访问全球网络，看 Netflix 4K、打外服游戏与调用 ChatGPT”</strong>？答案就是搭建<strong>「全屋透明代理（Transparent Proxy）」</strong>。</p>
+        <p>本文由梯子当权（tizidangquan.online）为你详细解析最稳健的“旁路由网络拓扑”，并手把手指导 OpenClash 与 ShellCrash 的核心配置实战。</p>
+
+        <h2 style="font-size: 1.35rem; color: #0078d4; margin: 28px 0 12px;">一、核心网络拓扑：为什么强烈推荐“旁路由”而非主路由？</h2>
+
+        <p>在家庭网络改造中，很多人一上来就想把硬路由换掉，直接用软路由拨号做“主路由”。但对于有家人的家庭网络而言，这种做法风险极高：一旦你在调试代理配置时写错了某行规则或内核死锁，<strong>全家人的宽带立刻彻底瘫痪，连微信、抖音都刷不出来</strong>，极易引发家庭矛盾。</p>
+
+        <div style="background: #eff6fc; border-radius: 8px; padding: 20px; border-left: 4px solid var(--fluent-primary); margin: 20px 0;">
+          <h4 style="color: #0078d4; margin-top: 0;">🌟 旁路由（旁路网关）的绝对优势：</h4>
+          <ul>
+            <li><strong>原有网络架构不动</strong>：光猫与现有的华硕/小米 Wi-Fi 主路由器依然负责正常的 PPPoE 拨号与 DHCP 分发；</li>
+            <li><strong>软路由作为局域网普通设备接入</strong>：将一台小主机（如 N100、J4125、GL.iNet 或 NAS 虚拟机）插上网线连入主路由器，赋予一个固定的局域网 IP（例如 <code>192.168.1.2</code>）；</li>
+            <li><strong>按需指向，互不干扰</strong>：对于需要翻墙的 Apple TV、Switch 或自己的主力电脑，只需在设备网络设置中将<strong>「默认网关」与「DNS」手动改成 <code>192.168.1.2</code></strong>。而家人的手机依然走主路由器 <code>192.168.1.1</code>，即使旁路由死机维护，家庭普通网络也 100% 毫无影响！</li>
+          </ul>
+        </div>
+
+        <h2 style="font-size: 1.35rem; color: #0078d4; margin: 28px 0 12px;">二、两大软路由核心插件对比：OpenClash vs ShellCrash</h2>
+
+        <h3 style="font-size: 1.1rem; color: #1e293b; margin: 16px 0 8px;">1. OpenClash（功能集大成者，Web 界面管理）</h3>
+        <p>运行在 OpenWrt 固件上的图形化插件：</p>
+        <ul>
+          <li><strong>优势</strong>：拥有极其完善的 LuCI Web 控制面板，策略组可视化拖拽，支持 Meta 内核、TUN 模式以及规则集自动更新；</li>
+          <li><strong>适用硬件</strong>：x86 软路由主机（如 Intel N100、N5105）、性能较好的 ARM 开发板（如树莓派 4B/5、友善 NanoPi R4S/R5S）。</li>
+        </ul>
+
+        <h3 style="font-size: 1.1rem; color: #1e293b; margin: 16px 0 8px;">2. ShellCrash（极简神兵，零开销全平台）</h3>
+        <p>基于纯 Shell 脚本打造的轻量代理核心管理工具：</p>
+        <ul>
+          <li><strong>优势</strong>：内存占用不到 20MB，不仅支持 OpenWrt，还能<strong>直接免刷机安装在小米路由器（AX3000/AX6000）、华硕梅林固件、GL.iNet 甚至威联通/群晖 NAS 的 Linux 终端中</strong>；</li>
+          <li><strong>管理方式</strong>：通过 SSH 输入 <code>crash</code> 呼出纯文本彩色菜单，或通过本地 Web 面板进行日常切换。</li>
+        </ul>
+
+        <h2 style="font-size: 1.35rem; color: #0078d4; margin: 28px 0 12px;">三、OpenClash 旁路由关键参数配置实战</h2>
+
+        <p>搭建旁路由最常踩的坑是<strong>「DNS 回环风暴」</strong>与<strong>「国内流量异常绕行」</strong>。在 OpenWrt 的 OpenClash 设置中，务必牢记以下四大关键开关：</p>
+
+        <ol style="padding-left: 20px; line-height: 1.9;">
+          <li><strong>网络接口与物理连接设置</strong>：
+            进入 OpenWrt「网络」->「接口」->「LAN」修改：
+            <ul>
+              <li>IPv4 地址：设为主路由同一网段的固定 IP（如 <code>192.168.1.2</code>）；</li>
+              <li>IPv4 网关：填写主路由器 IP（<code>192.168.1.1</code>）；</li>
+              <li>IPv4 广播 / DNS 服务器：填写主路由器 IP 或公共 DNS（如 <code>223.5.5.5</code>）；</li>
+              <li><strong>重要</strong>：在页面最下方勾选 <strong>「忽略此接口（不在此接口提供 DHCP 服务）」</strong>，彻底关闭旁路由的 DHCP，防止与主路由抢占分配 IP！</li>
+            </ul>
+          </li>
+          <li><strong>OpenClash 运行模式选择</strong>：
+            在「模式设置」中，强烈推荐勾选 <strong>「Fake-IP (TUN 模式)」</strong>。Fake-IP 模式不仅能把局域网所有设备的 DNS 解析开销压减到极限，还能完美捕获所有电视盒子和游戏主机的非标准协议数据流。</li>
+          <li><strong>防火墙自定义规则（关键！）</strong>：
+            为防止主路由流量转发到旁路由时出现单边 NAT 丢包，进入 OpenWrt「网络」->「防火墙」->「自定义规则」，添加一行经典伪装指令：
+            <pre style="background: #1e1e1e; color: #d4d4d4; padding: 12px; border-radius: 6px; font-size: 0.82rem; overflow-x: auto;">iptables -t nat -I POSTROUTING -o br-lan -j MASQUERADE</pre>
+          </li>
+          <li><strong>策略组分流配置</strong>：
+            在策略组中，将 Apple TV 绑定的 Apple 服务和 Netflix 分别指定至港台或日本低延迟专线节点，保障家庭影院 4K HDR 杜比视界码率拉满。</li>
+        </ol>
+
+        <h2 style="font-size: 1.35rem; color: #0078d4; margin: 28px 0 12px;">四、选购适合软路由的机场套餐注意事项</h2>
+
+        <p>软路由由于是<strong>“一台设备接入、代理全家几十台硬件”</strong>，在挑选机场时有两项核心要求：</p>
+        <ul>
+          <li><strong>必须挑选“不限制同时连接设备数”的机场</strong>：有些机场严格限制“同时在线设备不超过 2 台”，软路由在向外并发上百条 TCP 连接时，极易被机场系统判定为多设备违规共享而自动熔断。本站推荐的 <a href="../reviews.html#speed" style="color:#0078d4;font-weight:600;">速界机场</a> 与 <a href="../reviews.html#edge" style="color:#0078d4;font-weight:600;">边缘节点</a> 均支持<strong>全套餐不限设备数连接</strong>，非常适合全屋软路由部署。</li>
+          <li><strong>套餐流量要足够充裕</strong>：全屋透明代理下，电视盒子常开 4K 视频、电脑后台自动同步 iCloud 与 Steam 更新，每月流量消耗通常在 300GB - 800GB 之间，建议搭配大流量月付套餐。</li>
+        </ul>
+      </div>
+
+      <footer style="margin-top: 36px; padding-top: 20px; border-top: 1px solid rgba(0,0,0,0.06); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px;">
+        <a href="article-17.html" class="btn-secondary">← 上一篇：按量付费与不限时流量包评测</a>
+        <a href="article-19.html" class="btn-fluent">下一篇：科学上网安全防范全流程 →</a>
+      </footer>
+    </article>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-container">
+      <div class="footer-bottom">
+        <p>© 2026 梯子当权 tizidangquan.online · 保护网络自由 · 保留所有权利。</p>
+      </div>
+    </div>
+  </footer>
+  <script src="../js/main.js"></script>
+</body>
+</html>

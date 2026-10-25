@@ -1,0 +1,166 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>科学上网协议演进史：从 SS/SSR、V2Ray 到 Trojan、Reality 与 Hysteria 2 - 梯子当权知识库</title>
+  <meta name="description" content="硬核科普翻墙技术十余年演进史：从经典的Shadowsocks、SSR混淆，到VMess协议的兴起，再到模拟真实网页的Trojan、消灭域名的Vless-Reality以及基于UDP QUIC暴力抗丢包的Hysteria 2。深度解析DPI深度报文检测与主动探测攻防博弈。">
+  <link rel="icon" type="image/svg+xml" href="../assets/logo.svg">
+  <link rel="stylesheet" href="../css/fluent.css">
+  <link rel="canonical" href="https://tizidangquan.online/articles/article-11.html">
+
+  <!-- Geo Targeting -->
+  <meta name="geo.region" content="HK">
+  <meta name="geo.placename" content="Hong Kong">
+  <meta name="geo.position" content="22.3193;114.1694">
+  <meta name="ICBM" content="22.3193, 114.1694">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://tizidangquan.online/articles/article-11.html">
+  <meta property="og:title" content="科学上网协议演进史：从 SS/SSR、V2Ray 到 Trojan、Reality 与 Hysteria 2 - 梯子当权知识库">
+  <meta property="og:description" content="硬核科普翻墙技术十余年演进史：从经典的Shadowsocks、SSR混淆，到VMess协议的兴起，再到模拟真实网页的Trojan、消灭域名的Vless-Reality以及基于UDP QUIC暴力抗丢包的Hysteria 2。深度解析DPI深度报文检测与主动探测攻防博弈。">
+  <meta property="og:image" content="https://tizidangquan.online/assets/logo.svg">
+  <meta property="og:site_name" content="梯子当权">
+
+  <!-- GEO Schema.org TechArticle for AI Engines -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "TechArticle",
+    "headline": "科学上网协议演进史：从 SS/SSR、V2Ray 到 Trojan、Reality 与 Hysteria 2 - 梯子当权知识库",
+    "description": "硬核科普翻墙技术十余年演进史：从经典的Shadowsocks、SSR混淆，到VMess协议的兴起，再到模拟真实网页的Trojan、消灭域名的Vless-Reality以及基于UDP QUIC暴力抗丢包的Hysteria 2。深度解析DPI深度报文检测与主动探测攻防博弈。",
+    "url": "https://tizidangquan.online/articles/article-11.html",
+    "inLanguage": "zh-CN",
+    "publisher": {
+      "@type": "Organization",
+      "name": "梯子当权",
+      "url": "https://tizidangquan.online/"
+    }
+  }
+  </script>
+</head>
+<body>
+  <div class="fluent-strip"><span></span><span></span><span></span><span></span></div>
+
+  <header class="site-header">
+    <div class="header-container">
+      <a href="../index.html" class="brand">
+        <img src="../assets/logo.svg" alt="梯子当权 Logo">
+        <span>梯子当权</span>
+        <span class="brand-badge">tizidangquan.online</span>
+      </a>
+      <nav id="navMenu" class="nav-menu">
+        <a href="../index.html" class="nav-link">首页</a>
+        <a href="../recommend.html" class="nav-link">机场推荐</a>
+        <a href="../ranking.html" class="nav-link">机场排行</a>
+        <a href="../reviews.html" class="nav-link">品牌评测</a>
+        <a href="../ai-tools.html" class="nav-link">AI工具</a>
+        <a href="../clients.html" class="nav-link">客户端</a>
+        <a href="../faq.html" class="nav-link">问题中心</a>
+        <a href="../warning.html" class="nav-link">机场预警</a>
+        <a href="../knowledge.html" class="nav-link active">机场知识库</a>
+      </nav>
+      <div class="header-actions">
+        <button id="menuToggle" class="menu-toggle" aria-label="切换导航菜单">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main class="main-wrapper">
+    <nav class="breadcrumb" aria-label="面包屑">
+      <a href="../index.html">首页</a>
+      <span class="breadcrumb-separator">/</span>
+      <a href="../knowledge.html">机场知识库</a>
+      <span class="breadcrumb-separator">/</span>
+      <span>正文</span>
+    </nav>
+
+    <article class="fluent-card" style="padding: 36px 32px; max-width: 960px; margin: 0 auto;">
+      <header style="margin-bottom: 24px; border-bottom: 1px solid rgba(0,0,0,0.06); padding-bottom: 20px;">
+        <span class="tag-accent" style="margin-bottom: 10px; display: inline-block;">硬核底层原理</span>
+        <h1 style="font-size: 1.85rem; color: #182d46; line-height: 1.35; margin-bottom: 12px;">科学上网协议演进史：从 SS/SSR、V2Ray 到 Trojan、Reality 与 Hysteria 2</h1>
+        <div style="font-size: 0.85rem; color: #64748b; display: flex; gap: 16px; flex-wrap: wrap;">
+          <span>📅 发布时间：2026年10月</span>
+          <span>⏱️ 阅读时长：约 10 分钟 (2350 字)</span>
+          <span>✍️ 作者：梯子当权评测组</span>
+        </div>
+      </header>
+
+      <div style="font-size: 0.95rem; color: #2d3b4b; line-height: 1.85;">
+        <p>在科学上网的技术语境中，“协议 (Protocol)”是决定网络数据包如何打包、加密、伪装并在网络两端传输的规则标准。打开任何现代代理客户端，你都会看到形形色色的名词：Shadowsocks、VMess、VLESS、Trojan、Hysteria 2、TUIC……</p>
+        <p>很多朋友面对这些技术词汇常感到无所适从：<strong>为什么曾经红极一时的协议会被淘汰？最新的协议到底厉害在哪里？在 2026 年的今天，我们使用机场服务时究竟应该优先选择哪种协议？</strong></p>
+        <p>这不仅是一部技术的演进史，更是一部持续了十余年的、极客开发者与国家级深度报文检测系统（GFW DPI）之间波澜壮阔的“猫鼠博弈史”。本文由梯子当权（tizidangquan.online）带你穿透迷雾，全面梳理协议发展历程。</p>
+
+        <h2 style="font-size: 1.35rem; color: #0078d4; margin: 28px 0 12px;">一、第一世代（2012-2016）：破土而出与特征抹除 (Shadowsocks / SSR)</h2>
+
+        <h3 style="font-size: 1.1rem; color: #1e293b; margin: 16px 0 8px;">1. 传奇开端：Shadowsocks (SS)</h3>
+        <p>2012 年，开发者 clowwindy 在 GitHub 上开源了 <strong>Shadowsocks</strong>。在 SS 诞生之前，人们大多使用 PPTP、L2TP 或 OpenVPN。这些传统 VPN 的协议头有极其鲜明的固定指纹特征，GFW 只需要在出口网关进行简单的静态规则匹配就能秒封。</p>
+        <p>Shadowsocks 带来了划时代的创新——<strong>彻底消除协议特征（完全随机化）</strong>。SS 将原本的 SOCKS5 流量用对称加密算法（后来升级为 AEAD 强加密如 AES-256-GCM、ChaCha20-Poly1305）完全打散成看似没有任何规律的“纯随机二进制高熵噪点数据”。在当时，GFW 无法从数据流中提取出任何特征头，科学上网迎来了长达数年的黄金发展期。</p>
+
+        <h3 style="font-size: 1.1rem; color: #1e293b; margin: 16px 0 8px;">2. 混淆与分叉：ShadowsocksR (SSR)</h3>
+        <p>随着机器学习与熵值分析技术的发展，GFW 进化出了“重放攻击与主动探测 (Active Probing)”：即使数据看似随机，GFW 会复制可疑数据包向目标服务端进行试探性回放，如果服务端按规则响应，则判定为代理并封锁 IP。随后 breakwa11 开发了 <strong>ShadowsocksR (酸酸乳)</strong>，引入了 <code>tls1.2_ticket_auth</code> 等混淆插件，试图将流量假装成普通的 HTTPS 网页流量，开启了流量伪装的新阶段。</p>
+
+        <h2 style="font-size: 1.35rem; color: #0078d4; margin: 28px 0 12px;">二、第二世代（2017-2020）：复杂工程与混入 HTTPS (V2Ray / VMess / Trojan)</h2>
+
+        <h3 style="font-size: 1.1rem; color: #1e293b; margin: 16px 0 8px;">1. 模块化平台：Project V 与 VMess 协议</h3>
+        <p>2017 年，开发者 Victoria Raymond 开启了 <strong>Project V (V2Ray)</strong>。其核心协议 <strong>VMess</strong> 是首个全面引入时间戳鉴权（要求客户端与服务端时间误差在 90 秒内）、动态端口和多路复用 (Mux) 的协议。更重要的是，V2Ray 实现了 <strong>WebSocket + TLS + Web 网站伪装</strong> 的经典架构：</p>
+        <p>用户的数据包被包裹在一条正规合法的 HTTPS 请求中，经过真正的域名和有效 SSL 证书加密。GFW 哪怕拆开检查，也只能看到“该用户正在访问一个正常的海外个人博客”，抗封锁能力大幅提升，但缺点是双重加密导致加解密 CPU 负载较高、握手延迟偏长。</p>
+
+        <h3 style="font-size: 1.1rem; color: #1e293b; margin: 16px 0 8px;">2. 纯粹与极简：Trojan (特洛伊木马)</h3>
+        <p>2019 年出现的 <strong>Trojan</strong> 秉持了另一条极端务实的哲学：“不要发明新协议，直接成为 HTTPS”。Trojan 监听在标准的 443 端口，如果收到合法的密码验证请求，则开启代理转发；如果收到非法的嗅探请求或 GFW 主动探测，服务端会将其无缝转发到一个真实的静态网页。这种“白就是白、黑就是白”的设计极其优雅，迅速在各大机场中普及。</p>
+
+        <h2 style="font-size: 1.35rem; color: #0078d4; margin: 28px 0 12px;">三、第三世代（2021-2023）：极致性能与零伪装 (VLESS / XTLS / Reality)</h2>
+
+        <h3 style="font-size: 1.1rem; color: #1e293b; margin: 16px 0 8px;">1. 减负与直通：VLESS 与 XTLS</h3>
+        <p>开发者 RPRX 提出了 <strong>VLESS</strong> 协议。它剥离了 VMess 繁琐冗余的内置二次加密逻辑，将加密任务完全交给外层的标准 TLS 1.3。同时研发了 <strong>XTLS</strong> 核心黑科技——“偷窥并直通”，直接在内存中 bypass 已被 TLS 加密的数据，将代理转发性能推向了物理网卡的极致，大幅节省了移动设备的耗电量。</p>
+
+        <h3 style="font-size: 1.1rem; color: #1e293b; margin: 16px 0 8px;">2. 划时代降维打击：VLESS-Reality</h3>
+        <p>在过去，搭建 Trojan 或 VLESS 必须自己花钱买域名、申请 SSL 证书并解析到服务器 IP，这给 GFW 留下了针对性阻断域名与证书证书透明度日志（CT Log）分析的线索。2023 年横空出世的 <strong>Reality</strong> 彻底改写了游戏规则：</p>
+        <p><strong>Reality 完全无需购买域名和证书，而是直接“借用/盗用”海外大型权威网站（如苹果、微软、亚马逊、Cloudflare 等）的真实公钥与 TLS 握手特征！</strong>在 GFW 的流量嗅探探针看来，你的连接完全是向苹果或微软官方服务器发起的正规合规请求，彻底免疫主动探测与基于 SNI 的拦截。</p>
+
+        <h2 style="font-size: 1.35rem; color: #0078d4; margin: 28px 0 12px;">四、第四世代（2024-2026）：UDP 革命与弱网极速 (Hysteria 2 / TUIC)</h2>
+
+        <p>过去的所有主流协议（SS、VMess、Trojan、VLESS）底层均基于 <strong>TCP 协议</strong>。TCP 协议的核心缺陷是“丢包必须重传且队头阻塞 (Head-of-Line Blocking)”。一旦在晚高峰遇到骨干网 10% 以上丢包，TCP 的拥塞控制算法会自动将传输速率腰斩，导致 4K 播放严重卡顿。</p>
+
+        <h3 style="font-size: 1.1rem; color: #1e293b; margin: 16px 0 8px;">新霸主：Hysteria 2 (歇斯底里)</h3>
+        <p><strong>Hysteria 2 基于新一代 HTTP/3 底层的 UDP QUIC 协议重构</strong>。其核心杀手锏是革命性的拥塞控制算法（Brutal / BBR）：</p>
+        <ul>
+          <li><strong>即使面临高达 20%-30% 的公网恶劣丢包率，Hysteria 2 依然能以惊人的强行吞吐量跑满用户的物理宽带上限！</strong></li>
+          <li><strong>抗封锁与混淆</strong>：内置了 Salamander 端口跳跃与自适应填充伪装，即便部分地方运营商对 UDP 流量进行无差别 QoS 丢包，Hysteria 2 也能通过动态伪装成普通视讯会议或流媒体通信，保障极速连通。</li>
+        </ul>
+
+        <h2 style="font-size: 1.35rem; color: #0078d4; margin: 28px 0 12px;">五、2026 年选购机场与节点的终极法则</h2>
+
+        <div style="background: #eff6fc; border-radius: 8px; padding: 20px; border-left: 4px solid var(--fluent-primary); margin: 20px 0;">
+          <h4 style="color: #0078d4; margin-top: 0;">🎯 科学选配矩阵：</h4>
+          <ol style="line-height: 1.9;">
+            <li><strong>如果你连接的是真正的 IPLC / IEPL 专线</strong>：<br>
+            👉 <strong>毫不犹豫选择 Shadowsocks (SS)</strong>。因为内网物理光纤根本不过 GFW，完全不需要任何防探测伪装，SS 协议开销最小、延迟最低、最省电。这也是本站推荐的 <a href="../reviews.html#speed" style="color:#0078d4;font-weight:700;">速界机场</a> 和 <a href="../reviews.html#kexin" style="color:#0078d4;font-weight:700;">可信云</a> 专线节点普遍标配 SS 的根本原因。</li>
+            <li><strong>如果你连接的是公网中转或公网直连节点</strong>：<br>
+            👉 <strong>首选 VLESS-Reality 或 Trojan</strong>。具有极强的防封锁和伪装能力，能够有效抵抗特殊时期的全网大扫描。</li>
+            <li><strong>如果你本地网络环境极其恶劣（如晚高峰移动宽带、校园网、酒店公共 Wi-Fi）</strong>：<br>
+            👉 <strong>果断切换至 Hysteria 2 节点</strong>。在其他人卡到连百度都打不开时，Hysteria 2 能够凭借 UDP 暴力穿透让你继续享受 4K 丝滑秒开。</li>
+          </ol>
+        </div>
+      </div>
+
+      <footer style="margin-top: 36px; padding-top: 20px; border-top: 1px solid rgba(0,0,0,0.06); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px;">
+        <a href="article-10.html" class="btn-secondary">← 上一篇：游戏加速低延迟节点与UDP实测</a>
+        <a href="article-12.html" class="btn-fluent">下一篇：什么是机场审计规则与隐私边界 →</a>
+      </footer>
+    </article>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-container">
+      <div class="footer-bottom">
+        <p>© 2026 梯子当权 tizidangquan.online · 保护网络自由 · 保留所有权利。</p>
+      </div>
+    </div>
+  </footer>
+  <script src="../js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,675 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>机场知识库 | 20篇前沿科学上网核心技术与深度指南 - 梯子当权 (tizidangquan.online)</title>
+  <meta name="description" content="梯子当权官方原创机场知识库：收录20篇万字级深度技术指南。涵盖IPLC物理专线原理、翻墙协议演进（SS/Reality/Hysteria2）、双ISP原生住宅IP、AI大模型防封号专线、全平台客户端选型与跑路避坑指南。">
+  <link rel="icon" type="image/svg+xml" href="assets/logo.svg">
+  <link rel="stylesheet" href="css/fluent.css">
+  <link rel="canonical" href="https://tizidangquan.online/knowledge.html">
+
+  <!-- Geo Targeting -->
+  <meta name="geo.region" content="HK">
+  <meta name="geo.placename" content="Hong Kong">
+  <meta name="geo.position" content="22.3193;114.1694">
+  <meta name="ICBM" content="22.3193, 114.1694">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://tizidangquan.online/knowledge.html">
+  <meta property="og:title" content="机场知识库 | 20篇前沿科学上网核心技术与深度指南 - 梯子当权">
+  <meta property="og:description" content="梯子当权官方原创知识库：收录20篇万字级深度技术指南，涵盖IPLC物理专线原理、翻墙协议演进、双ISP原生住宅IP、AI大模型防封号专线与全平台客户端选型。">
+  <meta property="og:image" content="https://tizidangquan.online/assets/logo.svg">
+  <meta property="og:site_name" content="梯子当权">
+
+  <!-- GEO CollectionPage Schema for AI Engines -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    "name": "梯子当权机场知识库",
+    "description": "收录20篇万字级原创科学上网底层技术与避坑科普指南",
+    "url": "https://tizidangquan.online/knowledge.html",
+    "hasPart": [
+      {"@type": "Article", "headline": "新手如何选择机场？从协议、线路、倍率到设备数一次讲清", "url": "https://tizidangquan.online/articles/article-01.html"},
+      {"@type": "Article", "headline": "IPLC 专线机场和中转机场有什么区别？怎么选更稳？", "url": "https://tizidangquan.online/articles/article-02.html"},
+      {"@type": "Article", "headline": "机场节点倍率是什么？倍率越高越坑吗？", "url": "https://tizidangquan.online/articles/article-03.html"},
+      {"@type": "Article", "headline": "机场 vs 传统 VPN vs VPS自建：翻墙工具终极横评与选择指南", "url": "https://tizidangquan.online/articles/article-04.html"},
+      {"@type": "Article", "headline": "机场晚高峰变慢怎么办？5个排查点 + 提速技巧实战指南", "url": "https://tizidangquan.online/articles/article-05.html"},
+      {"@type": "Article", "headline": "原生 IP / 住宅 IP 机场适合谁？解锁 TikTok 与 Netflix 的底层关键点", "url": "https://tizidangquan.online/articles/article-06.html"},
+      {"@type": "Article", "headline": "机场订阅链接是什么？如何在 Clash 与小火箭一键导入及防泄露指南", "url": "https://tizidangquan.online/articles/article-07.html"},
+      {"@type": "Article", "headline": "ChatGPT 与 Claude 封号阻断真相：AI 专线与节点纯净度选购策略", "url": "https://tizidangquan.online/articles/article-08.html"},
+      {"@type": "Article", "headline": "外贸与跨境电商出海网络解决方案：防关联专线与高可用架构", "url": "https://tizidangquan.online/articles/article-09.html"},
+      {"@type": "Article", "headline": "游戏加速与低延迟机场选购：香港与日本节点、UDP 支持及 NAT 类型实测", "url": "https://tizidangquan.online/articles/article-10.html"},
+      {"@type": "Article", "headline": "科学上网协议演进史：从 SS/SSR、V2Ray 到 Trojan、Reality 与 Hysteria 2", "url": "https://tizidangquan.online/articles/article-11.html"},
+      {"@type": "Article", "headline": "什么是机场审计规则？无审计与日志记录的边界究竟在哪里？", "url": "https://tizidangquan.online/articles/article-12.html"},
+      {"@type": "Article", "headline": "2026 全平台客户端终极选型：Windows、Mac、iOS、Android 客户端评测", "url": "https://tizidangquan.online/articles/article-13.html"},
+      {"@type": "Article", "headline": "机场连上了但打不开网页？10 步连通性急救排查与修复方案", "url": "https://tizidangquan.online/articles/article-14.html"},
+      {"@type": "Article", "headline": "全球地区节点深度选购指南：香港、台湾、日本、新加坡、欧美节点怎么挑？", "url": "https://tizidangquan.online/articles/article-15.html"},
+      {"@type": "Article", "headline": "机场月付、季付还是年付？月付保平安经济学与套餐周期选择", "url": "https://tizidangquan.online/articles/article-16.html"},
+      {"@type": "Article", "headline": "机场按量付费与不限时流量包深度评测：适合哪些人群？", "url": "https://tizidangquan.online/articles/article-17.html"},
+      {"@type": "Article", "headline": "软路由与全屋透明代理搭建：OpenClash 与 ShellCrash 旁路由配置指南", "url": "https://tizidangquan.online/articles/article-18.html"},
+      {"@type": "Article", "headline": "科学上网安全防范：DNS 污染、WebRTC 泄露与真实 IP 防护全流程", "url": "https://tizidangquan.online/articles/article-19.html"},
+      {"@type": "Article", "headline": "机场跑路与杀猪盘套路深度揭秘：识别 7 个跑路前兆与止损防范法则", "url": "https://tizidangquan.online/articles/article-20.html"}
+    ]
+  }
+  </script>
+  <style>
+    .article-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+      gap: 22px;
+      margin-top: 24px;
+    }
+    .kb-card {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: all 0.25s ease;
+      border: 1px solid rgba(0, 120, 212, 0.12);
+      position: relative;
+    }
+    .kb-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 28px rgba(0, 120, 212, 0.12);
+      border-color: var(--fluent-primary);
+    }
+    .kb-num-badge {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 28px;
+      height: 28px;
+      background: linear-gradient(135deg, #0078d4, #005a9e);
+      color: #fff;
+      font-size: 0.8rem;
+      font-weight: 700;
+      border-radius: 6px;
+      margin-right: 8px;
+    }
+    .filter-tabs {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 24px;
+    }
+    .filter-btn {
+      padding: 8px 16px;
+      border-radius: 20px;
+      border: 1px solid #cbd5e1;
+      background: #fff;
+      color: #334155;
+      font-size: 0.88rem;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .filter-btn.active, .filter-btn:hover {
+      background: var(--fluent-primary);
+      color: #fff;
+      border-color: var(--fluent-primary);
+    }
+  </style>
+</head>
+<body>
+
+  <div class="fluent-strip">
+    <span></span><span></span><span></span><span></span>
+  </div>
+
+  <header class="site-header">
+    <div class="header-container">
+      <a href="index.html" class="brand">
+        <img src="assets/logo.svg" alt="梯子当权 Logo">
+        <span>梯子当权</span>
+        <span class="brand-badge">tizidangquan.online</span>
+      </a>
+
+      <nav id="navMenu" class="nav-menu">
+        <a href="index.html" class="nav-link">首页</a>
+        <a href="recommend.html" class="nav-link">机场推荐</a>
+        <a href="ranking.html" class="nav-link">机场排行</a>
+        <a href="reviews.html" class="nav-link">品牌评测</a>
+        <a href="ai-tools.html" class="nav-link">AI工具</a>
+        <a href="clients.html" class="nav-link">客户端</a>
+        <a href="faq.html" class="nav-link">问题中心</a>
+        <a href="warning.html" class="nav-link">机场预警</a>
+        <a href="knowledge.html" class="nav-link active">机场知识库</a>
+      </nav>
+
+      <div class="header-actions">
+        <div class="search-box">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="11" cy="11" r="8"></circle>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+          </svg>
+          <input type="text" id="siteSearch" placeholder="搜索知识库文章...">
+        </div>
+        <button id="menuToggle" class="menu-toggle" aria-label="切换导航菜单">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <section class="hero-banner">
+    <div class="hero-content">
+      <div class="hero-pill">
+        <span style="color:#00e5ff;">✦</span> 原创 · 科学 · 硬核 · 20篇深度知识专栏
+      </div>
+      <h1 class="hero-title">科学上网与网络技术深度知识库</h1>
+      <p class="hero-subtitle">告别商家的营销噱头与技术黑话。从 IPLC 物理专线光缆、双 ISP 原生住宅 IP、新一代 Hysteria2 协议到 ChatGPT 封号防御，20 篇万字级硬核长文为你彻底讲透底层逻辑。</p>
+    </div>
+  </section>
+
+  <main class="main-wrapper">
+    <nav class="breadcrumb" aria-label="面包屑">
+      <a href="index.html">首页</a>
+      <span class="breadcrumb-separator">/</span>
+      <span>机场知识库 (全部 20 篇)</span>
+    </nav>
+
+    <!-- Category Filters -->
+    <div class="filter-tabs" id="categoryFilter">
+      <button class="filter-btn active" data-category="all">全部文章 (20)</button>
+      <button class="filter-btn" data-category="circuit">线路与专线 (4)</button>
+      <button class="filter-btn" data-category="protocol">协议与安全 (4)</button>
+      <button class="filter-btn" data-category="scenario">场景与应用 (5)</button>
+      <button class="filter-btn" data-category="client">客户端与实操 (4)</button>
+      <button class="filter-btn" data-category="buying">选购与避坑 (3)</button>
+    </div>
+
+    <!-- Articles Grid -->
+    <div class="article-grid" id="articleList">
+
+      <!-- Article 01 -->
+      <article class="fluent-card kb-card" data-category="buying circuit">
+        <div>
+          <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:12px;">
+            <div><span class="kb-num-badge">01</span><span class="tag-accent">新手入门必读</span></div>
+            <span style="font-size:0.8rem; color:#64748b;">约 2100 字</span>
+          </div>
+          <h2 style="font-size:1.15rem; margin-bottom:10px; line-height:1.4;">
+            <a href="articles/article-01.html" style="color:#182d46; text-decoration:none;">新手如何选择机场？从协议、线路、倍率到设备数一次讲清</a>
+          </h2>
+          <p style="font-size:0.88rem; color:#475569; line-height:1.6; margin-bottom:16px;">
+            面对海量的专线、BGP、SS/Trojan、0.2x~5x 扣费倍率与设备限制，新手往往一头雾水。本文系统建立一套科学严谨的选购决策模型，教你如何防范套路。
+          </p>
+        </div>
+        <div style="display:flex; justify-content:space-between; align-items:center; padding-top:14px; border-top:1px solid rgba(0,0,0,0.06);">
+          <span style="font-size:0.8rem; color:#94a3b8;">📅 2026年10月</span>
+          <a href="articles/article-01.html" class="btn-fluent" style="padding:6px 14px; font-size:0.85rem;">阅读全文 →</a>
+        </div>
+      </article>
+
+      <!-- Article 02 -->
+      <article class="fluent-card kb-card" data-category="circuit">
+        <div>
+          <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:12px;">
+            <div><span class="kb-num-badge">02</span><span class="tag-accent">专线底层原理</span></div>
+            <span style="font-size:0.8rem; color:#64748b;">约 2050 字</span>
+          </div>
+          <h2 style="font-size:1.15rem; margin-bottom:10px; line-height:1.4;">
+            <a href="articles/article-02.html" style="color:#182d46; text-decoration:none;">IPLC 专线机场和中转机场有什么区别？怎么选更稳？</a>
+          </h2>
+          <p style="font-size:0.88rem; color:#475569; line-height:1.6; margin-bottom:16px;">
+            为什么 IPLC/IEPL 在敏感时期依然稳如泰山？深度解析内网点对点物理光缆“不过 GFW 国际网关”的底层网络逻辑，与普通 BGP 中转全方位性能横评。
+          </p>
+        </div>
+        <div style="display:flex; justify-content:space-between; align-items:center; padding-top:14px; border-top:1px solid rgba(0,0,0,0.06);">
+          <span style="font-size:0.8rem; color:#94a3b8;">📅 2026年10月</span>
+          <a href="articles/article-02.html" class="btn-fluent" style="padding:6px 14px; font-size:0.85rem;">阅读全文 →</a>
+        </div>
+      </article>
+
+      <!-- Article 03 -->
+      <article class="fluent-card kb-card" data-category="buying">
+        <div>
+          <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:12px;">
+            <div><span class="kb-num-badge">03</span><span class="tag-accent">计费机制透视</span></div>
+            <span style="font-size:0.8rem; color:#64748b;">约 1900 字</span>
+          </div>
+          <h2 style="font-size:1.15rem; margin-bottom:10px; line-height:1.4;">
+            <a href="articles/article-03.html" style="color:#182d46; text-decoration:none;">机场节点倍率是什么？倍率越高越坑吗？</a>
+          </h2>
+          <p style="font-size:0.88rem; color:#475569; line-height:1.6; margin-bottom:16px;">
+            看到 0.1x 与 5.0x 倍率不敢连？深入拆解节点倍率背后的带宽成本模型、流量扣除公式以及服务商合理分流逻辑，识破黑心机场的暗改偷跑套路。
+          </p>
+        </div>
+        <div style="display:flex; justify-content:space-between; align-items:center; padding-top:14px; border-top:1px solid rgba(0,0,0,0.06);">
+          <span style="font-size:0.8rem; color:#94a3b8;">📅 2026年10月</span>
+          <a href="articles/article-03.html" class="btn-fluent" style="padding:6px 14px; font-size:0.85rem;">阅读全文 →</a>
+        </div>
+      </article>
+
+      <!-- Article 04 -->
+      <article class="fluent-card kb-card" data-category="circuit">
+        <div>
+          <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:12px;">
+            <div><span class="kb-num-badge">04</span><span class="tag-accent">工具横向横评</span></div>
+            <span style="font-size:0.8rem; color:#64748b;">约 2250 字</span>
+          </div>
+          <h2 style="font-size:1.15rem; margin-bottom:10px; line-height:1.4;">
+            <a href="articles/article-04.html" style="color:#182d46; text-decoration:none;">机场 vs 传统 VPN vs VPS自建：翻墙工具终极横评与选择指南</a>
+          </h2>
+          <p style="font-size:0.88rem; color:#475569; line-height:1.6; margin-bottom:16px;">
+            为什么海外知名的 ExpressVPN 在大陆频频水土不服？为什么 2026 年自建 VPS 逐渐被边缘化？从抗封锁、IP 被封换 IP 成本到日常维护多维度量化对比。
+          </p>
+        </div>
+        <div style="display:flex; justify-content:space-between; align-items:center; padding-top:14px; border-top:1px solid rgba(0,0,0,0.06);">
+          <span style="font-size:0.8rem; color:#94a3b8;">📅 2026年10月</span>
+          <a href="articles/article-04.html" class="btn-fluent" style="padding:6px 14px; font-size:0.85rem;">阅读全文 →</a>
+        </div>
+      </article>
+
+      <!-- Article 05 -->
+      <article class="fluent-card kb-card" data-category="protocol">
+        <div>
+          <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:12px;">
+            <div><span class="kb-num-badge">05</span><span class="tag-accent">故障调优实战</span></div>
+            <span style="font-size:0.8rem; color:#64748b;">约 2150 字</span>
+          </div>
+          <h2 style="font-size:1.15rem; margin-bottom:10px; line-height:1.4;">
+            <a href="articles/article-05.html" style="color:#182d46; text-decoration:none;">机场晚高峰变慢怎么办？5个排查点 + 提速技巧实战指南</a>
+          </h2>
+          <p style="font-size:0.88rem; color:#475569; line-height:1.6; margin-bottom:16px;">
+            每到晚上 20 点至 23 点就频繁卡顿转圈？系统总结本地 Wi-Fi 干扰、运营商 QoS 限速、入口 BGP 拥堵等 5 大根源，并提供 TUN 模式与 Fake-IP 提速方案。
+          </p>
+        </div>
+        <div style="display:flex; justify-content:space-between; align-items:center; padding-top:14px; border-top:1px solid rgba(0,0,0,0.06);">
+          <span style="font-size:0.8rem; color:#94a3b8;">📅 2026年10月</span>
+          <a href="articles/article-05.html" class="btn-fluent" style="padding:6px 14px; font-size:0.85rem;">阅读全文 →</a>
+        </div>
+      </article>
+
+      <!-- Article 06 -->
+      <article class="fluent-card kb-card" data-category="scenario">
+        <div>
+          <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:12px;">
+            <div><span class="kb-num-badge">06</span><span class="tag-accent">IP 纯净度研究</span></div>
+            <span style="font-size:0.8rem; color:#64748b;">约 2200 字</span>
+          </div>
+          <h2 style="font-size:1.15rem; margin-bottom:10px; line-height:1.4;">
+            <a href="articles/article-06.html" style="color:#182d46; text-decoration:none;">原生 IP / 住宅 IP 机场适合谁？解锁 TikTok 与 Netflix 的底层关键点</a>
+          </h2>
+          <p style="font-size:0.88rem; color:#475569; line-height:1.6; margin-bottom:16px;">
+            机房 IP、广播 IP 与双 ISP 住宅 IP 到底有什么技术差异？揭秘 Netflix 跨区判定与 TikTok 发视频 0 播放背后的欺诈分（Fraud Score）反作弊机制。
+          </p>
+        </div>
+        <div style="display:flex; justify-content:space-between; align-items:center; padding-top:14px; border-top:1px solid rgba(0,0,0,0.06);">
+          <span style="font-size:0.8rem; color:#94a3b8;">📅 2026年10月</span>
+          <a href="articles/article-06.html" class="btn-fluent" style="padding:6px 14px; font-size:0.85rem;">阅读全文 →</a>
+        </div>
+      </article>
+
+      <!-- Article 07 -->
+      <article class="fluent-card kb-card" data-category="client">
+        <div>
+          <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:12px;">
+            <div><span class="kb-num-badge">07</span><span class="tag-accent">配置与安全</span></div>
+            <span style="font-size:0.8rem; color:#64748b;">约 2100 字</span>
+          </div>
+          <h2 style="font-size:1.15rem; margin-bottom:10px; line-height:1.4;">
+            <a href="articles/article-07.html" style="color:#182d46; text-decoration:none;">机场订阅链接是什么？如何在 Clash 与小火箭一键导入及防泄露指南</a>
+          </h2>
+          <p style="font-size:0.88rem; color:#475569; line-height:1.6; margin-bottom:16px;">
+            深入浅出讲解 Subscription URL 的 Base64/YAML 结构与 API 拉取机制。手把手演示全平台一键导入，排查 403 报错，并防范订阅泄露被他人盗刷流量。
+          </p>
+        </div>
+        <div style="display:flex; justify-content:space-between; align-items:center; padding-top:14px; border-top:1px solid rgba(0,0,0,0.06);">
+          <span style="font-size:0.8rem; color:#94a3b8;">📅 2026年10月</span>
+          <a href="articles/article-07.html" class="btn-fluent" style="padding:6px 14px; font-size:0.85rem;">阅读全文 →</a>
+        </div>
+      </article>
+
+      <!-- Article 08 -->
+      <article class="fluent-card kb-card" data-category="scenario">
+        <div>
+          <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:12px;">
+            <div><span class="kb-num-badge">08</span><span class="tag-accent">AI 专属专线</span></div>
+            <span style="font-size:0.8rem; color:#64748b;">约 2200 字</span>
+          </div>
+          <h2 style="font-size:1.15rem; margin-bottom:10px; line-height:1.4;">
+            <a href="articles/article-08.html" style="color:#182d46; text-decoration:none;">ChatGPT 与 Claude 封号阻断真相：AI 专线与节点纯净度选购策略</a>
+          </h2>
+          <p style="font-size:0.88rem; color:#475569; line-height:1.6; margin-bottom:16px;">
+            揭秘 OpenAI 与 Anthropic 的 Cloudflare 防火墙判定逻辑、机房 ASN 批量拉黑与 WebRTC 真实泄密风险，手把手教你配置永不封号的 AI 专用稳定专线。
+          </p>
+        </div>
+        <div style="display:flex; justify-content:space-between; align-items:center; padding-top:14px; border-top:1px solid rgba(0,0,0,0.06);">
+          <span style="font-size:0.8rem; color:#94a3b8;">📅 2026年10月</span>
+          <a href="articles/article-08.html" class="btn-fluent" style="padding:6px 14px; font-size:0.85rem;">阅读全文 →</a>
+        </div>
+      </article>
+
+      <!-- Article 09 -->
+      <article class="fluent-card kb-card" data-category="scenario">
+        <div>
+          <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:12px;">
+            <div><span class="kb-num-badge">09</span><span class="tag-accent">商业出海网络</span></div>
+            <span style="font-size:0.8rem; color:#64748b;">约 2250 字</span>
+          </div>
+          <h2 style="font-size:1.15rem; margin-bottom:10px; line-height:1.4;">
+            <a href="articles/article-09.html" style="color:#182d46; text-decoration:none;">外贸与跨境电商出海网络解决方案：防关联专线与高可用架构</a>
+          </h2>
+          <p style="font-size:0.88rem; color:#475569; line-height:1.6; margin-bottom:16px;">
+            专为外贸企业、亚马逊/Shopify 卖家定制：三层分离网络架构、指纹浏览器整合静态住宅 IP 防店铺关联，以及海外 WhatsApp 消息即时推送保障方案。
+          </p>
+        </div>
+        <div style="display:flex; justify-content:space-between; align-items:center; padding-top:14px; border-top:1px solid rgba(0,0,0,0.06);">
+          <span style="font-size:0.8rem; color:#94a3b8;">📅 2026年10月</span>
+          <a href="articles/article-09.html" class="btn-fluent" style="padding:6px 14px; font-size:0.85rem;">阅读全文 →</a>
+        </div>
+      </article>
+
+      <!-- Article 10 -->
+      <article class="fluent-card kb-card" data-category="scenario">
+        <div>
+          <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:12px;">
+            <div><span class="kb-num-badge">10</span><span class="tag-accent">游戏低延迟加速</span></div>
+            <span style="font-size:0.8rem; color:#64748b;">约 2150 字</span>
+          </div>
+          <h2 style="font-size:1.15rem; margin-bottom:10px; line-height:1.4;">
+            <a href="articles/article-10.html" style="color:#182d46; text-decoration:none;">游戏加速与低延迟机场选购：香港与日本节点、UDP 支持及 NAT 类型实测</a>
+          </h2>
+          <p style="font-size:0.88rem; color:#475569; line-height:1.6; margin-bottom:16px;">
+            用机场打外服游戏靠谱吗？深度解析 UDP 转发 Relay、FullCone NAT 类型与 Jitter 抖动对 Steam、Apex、Switch 联机体验的影响，提供配置指南。
+          </p>
+        </div>
+        <div style="display:flex; justify-content:space-between; align-items:center; padding-top:14px; border-top:1px solid rgba(0,0,0,0.06);">
+          <span style="font-size:0.8rem; color:#94a3b8;">📅 2026年10月</span>
+          <a href="articles/article-10.html" class="btn-fluent" style="padding:6px 14px; font-size:0.85rem;">阅读全文 →</a>
+        </div>
+      </article>
+
+      <!-- Article 11 -->
+      <article class="fluent-card kb-card" data-category="protocol">
+        <div>
+          <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:12px;">
+            <div><span class="kb-num-badge">11</span><span class="tag-accent">十余年攻防史</span></div>
+            <span style="font-size:0.8rem; color:#64748b;">约 2350 字</span>
+          </div>
+          <h2 style="font-size:1.15rem; margin-bottom:10px; line-height:1.4;">
+            <a href="articles/article-11.html" style="color:#182d46; text-decoration:none;">科学上网协议演进史：从 SS/SSR、V2Ray 到 Trojan、Reality 与 Hysteria 2</a>
+          </h2>
+          <p style="font-size:0.88rem; color:#475569; line-height:1.6; margin-bottom:16px;">
+            从初代 Shadowsocks 的特征随机化、V2Ray 的伪装网站、Trojan 的白名单假装，到 Reality 的偷盗真实证书与 Hysteria 2 的 UDP 暴击抗丢包演进全景。
+          </p>
+        </div>
+        <div style="display:flex; justify-content:space-between; align-items:center; padding-top:14px; border-top:1px solid rgba(0,0,0,0.06);">
+          <span style="font-size:0.8rem; color:#94a3b8;">📅 2026年10月</span>
+          <a href="articles/article-11.html" class="btn-fluent" style="padding:6px 14px; font-size:0.85rem;">阅读全文 →</a>
+        </div>
+      </article>
+
+      <!-- Article 12 -->
+      <article class="fluent-card kb-card" data-category="protocol">
+        <div>
+          <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:12px;">
+            <div><span class="kb-num-badge">12</span><span class="tag-accent">合规与隐私底线</span></div>
+            <span style="font-size:0.8rem; color:#64748b;">约 2200 字</span>
+          </div>
+          <h2 style="font-size:1.15rem; margin-bottom:10px; line-height:1.4;">
+            <a href="articles/article-12.html" style="color:#182d46; text-decoration:none;">什么是机场审计规则？无审计与日志记录的边界究竟在哪里？</a>
+          </h2>
+          <p style="font-size:0.88rem; color:#475569; line-height:1.6; margin-bottom:16px;">
+            为什么正规机场普遍封禁 BT 迅雷下载与政府网站？机场服主真能看到你的密码吗？还原 TLS 1.3 端到端加密真相，揭露“纯无审计机场”的拔线跑路风险。
+          </p>
+        </div>
+        <div style="display:flex; justify-content:space-between; align-items:center; padding-top:14px; border-top:1px solid rgba(0,0,0,0.06);">
+          <span style="font-size:0.8rem; color:#94a3b8;">📅 2026年10月</span>
+          <a href="articles/article-12.html" class="btn-fluent" style="padding:6px 14px; font-size:0.85rem;">阅读全文 →</a>
+        </div>
+      </article>
+
+      <!-- Article 13 -->
+      <article class="fluent-card kb-card" data-category="client">
+        <div>
+          <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:12px;">
+            <div><span class="kb-num-badge">13</span><span class="tag-accent">全平台客户端</span></div>
+            <span style="font-size:0.8rem; color:#64748b;">约 2250 字</span>
+          </div>
+          <h2 style="font-size:1.15rem; margin-bottom:10px; line-height:1.4;">
+            <a href="articles/article-13.html" style="color:#182d46; text-decoration:none;">2026 全平台客户端终极选型：Windows、Mac、iOS、Android 客户端评测</a>
+          </h2>
+          <p style="font-size:0.88rem; color:#475569; line-height:1.6; margin-bottom:16px;">
+            全面对比 Clash Verge Rev、v2rayN、Shadowrocket 小火箭、Stash 与 sing-box。从内核性能、内存占用、TUN 网卡支持到耗电量逐一量化评测。
+          </p>
+        </div>
+        <div style="display:flex; justify-content:space-between; align-items:center; padding-top:14px; border-top:1px solid rgba(0,0,0,0.06);">
+          <span style="font-size:0.8rem; color:#94a3b8;">📅 2026年10月</span>
+          <a href="articles/article-13.html" class="btn-fluent" style="padding:6px 14px; font-size:0.85rem;">阅读全文 →</a>
+        </div>
+      </article>
+
+      <!-- Article 14 -->
+      <article class="fluent-card kb-card" data-category="client protocol">
+        <div>
+          <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:12px;">
+            <div><span class="kb-num-badge">14</span><span class="tag-accent">故障急救手册</span></div>
+            <span style="font-size:0.8rem; color:#64748b;">约 2300 字</span>
+          </div>
+          <h2 style="font-size:1.15rem; margin-bottom:10px; line-height:1.4;">
+            <a href="articles/article-14.html" style="color:#182d46; text-decoration:none;">机场连上了但打不开网页？10 步连通性急救排查与修复方案</a>
+          </h2>
+          <p style="font-size:0.88rem; color:#475569; line-height:1.6; margin-bottom:16px;">
+            节点延迟测速显示绿色，浏览器却死活打不开网页？从系统时间误差、注册表系统代理残留、TUN 网卡死锁到 DNS 投毒，10 步教你排查修复。
+          </p>
+        </div>
+        <div style="display:flex; justify-content:space-between; align-items:center; padding-top:14px; border-top:1px solid rgba(0,0,0,0.06);">
+          <span style="font-size:0.8rem; color:#94a3b8;">📅 2026年10月</span>
+          <a href="articles/article-14.html" class="btn-fluent" style="padding:6px 14px; font-size:0.85rem;">阅读全文 →</a>
+        </div>
+      </article>
+
+      <!-- Article 15 -->
+      <article class="fluent-card kb-card" data-category="scenario circuit">
+        <div>
+          <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:12px;">
+            <div><span class="kb-num-badge">15</span><span class="tag-accent">全球节点矩阵</span></div>
+            <span style="font-size:0.8rem; color:#64748b;">约 2350 字</span>
+          </div>
+          <h2 style="font-size:1.15rem; margin-bottom:10px; line-height:1.4;">
+            <a href="articles/article-15.html" style="color:#182d46; text-decoration:none;">全球地区节点深度选购指南：香港、台湾、日本、新加坡、欧美节点怎么挑？</a>
+          </h2>
+          <p style="font-size:0.88rem; color:#475569; line-height:1.6; margin-bottom:16px;">
+            为什么香港节点绝对不能用来连 ChatGPT？台湾节点为什么能看动画疯？日本节点二次元优势在哪？深度剖析各大地区节点的物理海底光缆与应用场景。
+          </p>
+        </div>
+        <div style="display:flex; justify-content:space-between; align-items:center; padding-top:14px; border-top:1px solid rgba(0,0,0,0.06);">
+          <span style="font-size:0.8rem; color:#94a3b8;">📅 2026年10月</span>
+          <a href="articles/article-15.html" class="btn-fluent" style="padding:6px 14px; font-size:0.85rem;">阅读全文 →</a>
+        </div>
+      </article>
+
+      <!-- Article 16 -->
+      <article class="fluent-card kb-card" data-category="buying">
+        <div>
+          <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:12px;">
+            <div><span class="kb-num-badge">16</span><span class="tag-accent">消费经济学</span></div>
+            <span style="font-size:0.8rem; color:#64748b;">约 2150 字</span>
+          </div>
+          <h2 style="font-size:1.15rem; margin-bottom:10px; line-height:1.4;">
+            <a href="articles/article-16.html" style="color:#182d46; text-decoration:none;">机场月付、季付还是年付？月付保平安经济学与套餐周期选择</a>
+          </h2>
+          <p style="font-size:0.88rem; color:#475569; line-height:1.6; margin-bottom:16px;">
+            为什么“月付保平安”是全网老手的第一准则？深度揭秘机场服务商上游机房按月 95 计费的刚性成本，以及不良服务商利用年付圈钱的击鼓传花跑路机制。
+          </p>
+        </div>
+        <div style="display:flex; justify-content:space-between; align-items:center; padding-top:14px; border-top:1px solid rgba(0,0,0,0.06);">
+          <span style="font-size:0.8rem; color:#94a3b8;">📅 2026年10月</span>
+          <a href="articles/article-16.html" class="btn-fluent" style="padding:6px 14px; font-size:0.85rem;">阅读全文 →</a>
+        </div>
+      </article>
+
+      <!-- Article 17 -->
+      <article class="fluent-card kb-card" data-category="buying">
+        <div>
+          <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:12px;">
+            <div><span class="kb-num-badge">17</span><span class="tag-accent">特色套餐机制</span></div>
+            <span style="font-size:0.8rem; color:#64748b;">约 2100 字</span>
+          </div>
+          <h2 style="font-size:1.15rem; margin-bottom:10px; line-height:1.4;">
+            <a href="articles/article-17.html" style="color:#182d46; text-decoration:none;">机场按量付费与不限时流量包深度评测：适合哪些人群？</a>
+          </h2>
+          <p style="font-size:0.88rem; color:#475569; line-height:1.6; margin-bottom:16px;">
+            一次性购买永久不过期流量包究竟划算吗？哪些人买它能省下 90% 费用？深度分析按量包作为“核心备用梯子”的容灾价值与重度流媒体避坑点。
+          </p>
+        </div>
+        <div style="display:flex; justify-content:space-between; align-items:center; padding-top:14px; border-top:1px solid rgba(0,0,0,0.06);">
+          <span style="font-size:0.8rem; color:#94a3b8;">📅 2026年10月</span>
+          <a href="articles/article-17.html" class="btn-fluent" style="padding:6px 14px; font-size:0.85rem;">阅读全文 →</a>
+        </div>
+      </article>
+
+      <!-- Article 18 -->
+      <article class="fluent-card kb-card" data-category="client">
+        <div>
+          <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:12px;">
+            <div><span class="kb-num-badge">18</span><span class="tag-accent">家庭全屋透明代理</span></div>
+            <span style="font-size:0.8rem; color:#64748b;">约 2300 字</span>
+          </div>
+          <h2 style="font-size:1.15rem; margin-bottom:10px; line-height:1.4;">
+            <a href="articles/article-18.html" style="color:#182d46; text-decoration:none;">软路由与全屋透明代理搭建：OpenClash 与 ShellCrash 旁路由配置指南</a>
+          </h2>
+          <p style="font-size:0.88rem; color:#475569; line-height:1.6; margin-bottom:16px;">
+            Apple TV、Switch、PS5 与全家手机连上 Wi-Fi 自动无感出海。手把手详解旁路网关拓扑、OpenClash 的 Fake-IP 模式与单边 NAT 防火墙伪装规则。
+          </p>
+        </div>
+        <div style="display:flex; justify-content:space-between; align-items:center; padding-top:14px; border-top:1px solid rgba(0,0,0,0.06);">
+          <span style="font-size:0.8rem; color:#94a3b8;">📅 2026年10月</span>
+          <a href="articles/article-18.html" class="btn-fluent" style="padding:6px 14px; font-size:0.85rem;">阅读全文 →</a>
+        </div>
+      </article>
+
+      <!-- Article 19 -->
+      <article class="fluent-card kb-card" data-category="protocol">
+        <div>
+          <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:12px;">
+            <div><span class="kb-num-badge">19</span><span class="tag-accent">匿名与隐私加固</span></div>
+            <span style="font-size:0.8rem; color:#64748b;">约 2200 字</span>
+          </div>
+          <h2 style="font-size:1.15rem; margin-bottom:10px; line-height:1.4;">
+            <a href="articles/article-19.html" style="color:#182d46; text-decoration:none;">科学上网安全防范：DNS 污染、WebRTC 泄露与真实 IP 防护全流程</a>
+          </h2>
+          <p style="font-size:0.88rem; color:#475569; line-height:1.6; margin-bottom:16px;">
+            挂了代理就绝对安全了吗？深度剖析 WebRTC 穿透代理直接暴露大陆公网 IP 的隐蔽漏洞，教你通过 DoH 加密与浏览器加固实现 100% 真实隐身防护。
+          </p>
+        </div>
+        <div style="display:flex; justify-content:space-between; align-items:center; padding-top:14px; border-top:1px solid rgba(0,0,0,0.06);">
+          <span style="font-size:0.8rem; color:#94a3b8;">📅 2026年10月</span>
+          <a href="articles/article-19.html" class="btn-fluent" style="padding:6px 14px; font-size:0.85rem;">阅读全文 →</a>
+        </div>
+      </article>
+
+      <!-- Article 20 -->
+      <article class="fluent-card kb-card" data-category="buying">
+        <div>
+          <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:12px;">
+            <div><span class="kb-num-badge">20</span><span class="tag-accent">黑幕揭秘与预警</span></div>
+            <span style="font-size:0.8rem; color:#64748b;">约 2400 字</span>
+          </div>
+          <h2 style="font-size:1.15rem; margin-bottom:10px; line-height:1.4;">
+            <a href="articles/article-20.html" style="color:#182d46; text-decoration:none;">机场跑路与杀猪盘套路深度揭秘：识别 7 个跑路前兆与止损防范法则</a>
+          </h2>
+          <p style="font-size:0.88rem; color:#475569; line-height:1.6; margin-bottom:16px;">
+            机场收官巨作：深度剖析机场倒闭背后的四大驱动模型、跑路前夕 7 大不可逆转的前兆信号（超低价促销、TG群禁言、节点超时），并给出终极自保铁律。
+          </p>
+        </div>
+        <div style="display:flex; justify-content:space-between; align-items:center; padding-top:14px; border-top:1px solid rgba(0,0,0,0.06);">
+          <span style="font-size:0.8rem; color:#94a3b8;">📅 2026年10月</span>
+          <a href="articles/article-20.html" class="btn-fluent" style="padding:6px 14px; font-size:0.85rem;">阅读全文 →</a>
+        </div>
+      </article>
+
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="footer-logo">
+            <img src="assets/logo.svg" alt="梯子当权 Logo">
+            <span>梯子当权</span>
+          </div>
+          <p>保护网络自由与隐私安全，提供最客观、真实、及时的科学上网与机场知识库评测服务。</p>
+        </div>
+        <div class="footer-col">
+          <h4>核心专区</h4>
+          <ul class="footer-links">
+            <li><a href="recommend.html">机场推荐榜</a></li>
+            <li><a href="ranking.html">综合排行榜</a></li>
+            <li><a href="reviews.html">15家深度评测</a></li>
+            <li><a href="warning.html">跑路预警库</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>客户端与工具</h4>
+          <ul class="footer-links">
+            <li><a href="clients.html">客户端大全</a></li>
+            <li><a href="ai-tools.html">前沿AI工具</a></li>
+            <li><a href="faq.html">常见问题50问</a></li>
+            <li><a href="knowledge.html">机场知识库</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>关于站点</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">返回首页</a></li>
+            <li><a href="faq.html#disclaimer">免责声明</a></li>
+            <li><a href="warning.html">举报异常机场</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2026 梯子当权 tizidangquan.online · 保护网络自由 · 保留所有权利。</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script>
+    // Knowledge Base Filter Tabs
+    const filterBtns = document.querySelectorAll('#categoryFilter .filter-btn');
+    const cards = document.querySelectorAll('#articleList .kb-card');
+
+    filterBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        filterBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        const cat = btn.getAttribute('data-category');
+
+        cards.forEach(card => {
+          if (cat === 'all' || card.getAttribute('data-category').includes(cat)) {
+            card.style.display = 'flex';
+          } else {
+            card.style.display = 'none';
+          }
+        });
+      });
+    });
+
+    // Real-time site search
+    const siteSearch = document.getElementById('siteSearch');
+    if (siteSearch) {
+      siteSearch.addEventListener('input', (e) => {
+        const query = e.target.value.toLowerCase().trim();
+        cards.forEach(card => {
+          const text = card.textContent.toLowerCase();
+          if (text.includes(query)) {
+            card.style.display = 'flex';
+          } else {
+            card.style.display = 'none';
+          }
+        });
+      });
+    }
+  </script>
+</body>
+</html>

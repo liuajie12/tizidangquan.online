@@ -1,0 +1,851 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>问题中心 | 50个用户上网常见问题与机场使用标准解答 - 梯子当权 (tizidangquan.online)</title>
+  <meta name="description" content="梯子当权问题中心全面收录50个网上用户翻墙与机场最常遇到的问题及标准答案：订阅导入报错、断网急救、晚高峰卡顿排查、ChatGPT/Claude风控解封、TUN模式开启、DNS泄露防范与防跑路选购指南。">
+  <link rel="icon" type="image/svg+xml" href="assets/logo.svg">
+  <link rel="stylesheet" href="css/fluent.css">
+  <link rel="canonical" href="https://tizidangquan.online/faq.html">
+
+  <!-- Geo Targeting -->
+  <meta name="geo.region" content="HK">
+  <meta name="geo.placename" content="Hong Kong">
+  <meta name="geo.position" content="22.3193;114.1694">
+  <meta name="ICBM" content="22.3193, 114.1694">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://tizidangquan.online/faq.html">
+  <meta property="og:title" content="问题中心 | 50个用户上网常见问题与机场使用标准解答 - 梯子当权">
+  <meta property="og:description" content="全面收录50个网上用户翻墙与机场最常遇到的问题及标准答案：订阅导入报错、断网急救、晚高峰排查、ChatGPT封号风控与防跑路选购指南。">
+  <meta property="og:image" content="https://tizidangquan.online/assets/logo.svg">
+  <meta property="og:site_name" content="梯子当权">
+
+  <!-- GEO FAQPage Schema for AI Engines & Google Rich Snippets -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "为什么节点延迟测试显示绿色数字，但打开网页却无法连接？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "节点测延迟测量的仅仅是用户本地到国内中转入口服务器的往返握手时间。如果中转机房正常但境外落地服务器出现故障、被封锁或专线光缆割接，就会出现测速绿字但无法实际传输网页数据的现象。建议切换其他地区节点排查。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "新手选择机场，月付和年付哪个更好？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "强烈建议坚决执行‘月付保平安’原则。由于科学上网服务涉及跨境IDC线路与审查博弈，年付存在极大的服务商跑路或线路降级风险。月付可将资金风险锁定在15-25元以内，保持自由选择权。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "为什么访问 ChatGPT 或 Claude 会提示 Access Denied 或触发封号？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "OpenAI 和 Anthropic 接入了严格的 Cloudflare 防火墙，严禁中国大陆及香港/澳门 IP 访问。如果使用公共机房高风险 IP、频繁跨国跳跃 IP 或 WebRTC 泄露真实大陆 IP，极易触发风控。建议使用支持住宅双 ISP 原生 IP 的专用专线，并强制分流至美国或日本节点。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "什么是 TUN 虚拟网卡模式？什么时候必须开启？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "TUN 模式是在系统底层创建一张虚拟网卡，强制接管整台设备的所有网络流量。传统的系统代理只能代理遵循系统代理设置的浏览器，而外服游戏、终端命令行、Spotify、Discord 等非标准流量必须通过开启 TUN 模式才能被代理转发。"
+        }
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+
+  <!-- Fluent Accent Strip -->
+  <div class="fluent-strip">
+    <span></span><span></span><span></span><span></span>
+  </div>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="header-container">
+      <a href="index.html" class="brand">
+        <img src="assets/logo.svg" alt="梯子当权 Logo">
+        <span>梯子当权</span>
+        <span class="brand-badge">tizidangquan.online</span>
+      </a>
+
+      <nav id="navMenu" class="nav-menu">
+        <a href="index.html" class="nav-link">首页</a>
+        <a href="recommend.html" class="nav-link">机场推荐</a>
+        <a href="ranking.html" class="nav-link">机场排行</a>
+        <a href="reviews.html" class="nav-link">品牌评测</a>
+        <a href="ai-tools.html" class="nav-link">AI工具</a>
+        <a href="clients.html" class="nav-link">客户端</a>
+        <a href="faq.html" class="nav-link active">问题中心</a>
+        <a href="warning.html" class="nav-link">机场预警</a>
+        <a href="knowledge.html" class="nav-link">机场知识库</a>
+      </nav>
+
+      <div class="header-actions">
+        <div class="search-box">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="11" cy="11" r="8"></circle>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+          </svg>
+          <input type="text" id="siteSearch" placeholder="搜索50个常见问题...">
+        </div>
+        <button id="menuToggle" class="menu-toggle" aria-label="切换导航菜单">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Banner -->
+  <section class="hero-banner">
+    <div class="hero-content">
+      <div class="hero-pill">
+        <span style="color:#00e5ff;">✦</span> 遇事不慌 · 标准方案 · 50个高频疑难杂症全解答
+      </div>
+      <h1 class="hero-title">上网与机场高频问题 50 问标准题库</h1>
+      <p class="hero-subtitle">全面覆盖新手配置、断网急救、网络报错排查、晚高峰提速、ChatGPT / Claude 原生解锁、安全防封与防跑路选购指南，点击即可展开标准答案。</p>
+    </div>
+  </section>
+
+  <!-- Main Content -->
+  <main class="main-wrapper">
+    <nav class="breadcrumb" aria-label="面包屑">
+      <a href="index.html">首页</a>
+      <span class="breadcrumb-separator">/</span>
+      <span>问题中心 (50问全解)</span>
+    </nav>
+
+    <!-- Category Jump Bar -->
+    <div class="filter-bar" style="margin-bottom: 30px;">
+      <span class="filter-title">问题分类直达:</span>
+      <a href="#cat-sub" class="filter-chip">📥 一、订阅导入与客户端配置 (Q1-Q9)</a>
+      <a href="#cat-conn" class="filter-chip">🔌 二、连通性与报错排查 (Q10-Q18)</a>
+      <a href="#cat-speed" class="filter-chip">⚡ 三、速度、延迟与专线 (Q19-Q27)</a>
+      <a href="#cat-ai" class="filter-chip">🤖 四、AI工具与流媒体解锁 (Q28-Q36)</a>
+      <a href="#cat-security" class="filter-chip">🛡️ 五、隐私安全与防封锁 (Q37-Q43)</a>
+      <a href="#cat-purchase" class="filter-chip">💰 六、选购防坑与避雷指南 (Q44-Q50)</a>
+    </div>
+
+    <!-- Category 1: 订阅导入与客户端配置 -->
+    <section id="cat-sub" style="margin-bottom: 36px;">
+      <div class="section-title-wrap">
+        <h2 class="section-title">📥 一、订阅导入与客户端配置 (Q1 - Q9)</h2>
+        <span style="font-size: 0.82rem; color: #64748b;">客户端初次上手最常见阻碍</span>
+      </div>
+
+      <div class="fluent-card" style="padding: 10px 14px;">
+
+        <!-- Q1 -->
+        <div id="sub-error" class="faq-item">
+          <button class="faq-trigger">
+            <span>Q1: 订阅链接放进 Clash / v2rayN 提示导入失败、Timeout 或网络错误怎么办？</span>
+            <svg class="faq-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="transition: transform 0.2s ease;"><polyline points="6 9 12 15 18 9"></polyline></svg>
+          </button>
+          <div class="faq-content">
+            <p><strong>标准排查方案：</strong></p>
+            <ol style="padding-left: 20px; line-height: 1.8;">
+              <li><strong>分发域名被墙</strong>：订阅链接通常由机场国内中转域名分发。如果当前完全没有梯子，换用手机流量热点拉取，或者在后台复制「备用订阅域名」。</li>
+              <li><strong>内核不兼容</strong>：老旧的 Clash for Windows 不支持新版 Mihomo 配置格式，请升级到 <a href="clients.html#clash-verge" style="color:#0078d4; font-weight:600;">Clash Verge Rev</a>。</li>
+              <li><strong>本地时间误差</strong>：TLS 证书要求本地与网络时间误差在 60 秒以内，打开 Windows 设置 -> 时间和语言 -> 点击「立即同步」。</li>
+            </ol>
+          </div>
+        </div>
+
+        <!-- Q2 -->
+        <div class="faq-item">
+          <button class="faq-trigger">
+            <span>Q2: 订阅成功后，节点列表里没有任何节点（列表显示为空）是什么原因？</span>
+            <svg class="faq-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="transition: transform 0.2s ease;"><polyline points="6 9 12 15 18 9"></polyline></svg>
+          </button>
+          <div class="faq-content">
+            <p><strong>标准答案：</strong>通常有三个原因：① 机场账号<strong>尚未购买套餐或套餐已过期</strong>，部分机场未付费账号订阅拉取为 0 节点；② 客户端开启了节点筛选过滤（如正则匹配），请清空过滤框；③ 右键该订阅配置，选择「更新订阅（不走代理）」，等待 3-5 秒即可刷新出节点。</p>
+          </div>
+        </div>
+
+        <!-- Q3 -->
+        <div class="faq-item">
+          <button class="faq-trigger">
+            <span>Q3: Clash 提示「Invalid YAML」或「配置文件语法错误」怎么解决？</span>
+            <svg class="faq-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="transition: transform 0.2s ease;"><polyline points="6 9 12 15 18 9"></polyline></svg>
+          </button>
+          <div class="faq-content">
+            <p><strong>标准答案：</strong>这是因为拉取到的不是有效的配置文件文本，而是机场防盗链拦截页面或 HTML 报错页。请检查订阅链接是否复制完整，确认是否误复制了浏览器网页登录 URL，并在浏览器隐私无痕窗口中粘贴该订阅链接，看是否直接触发下载 <code>.yaml</code> 文件。</p>
+          </div>
+        </div>
+
+        <!-- Q4 -->
+        <div class="faq-item">
+          <button class="faq-trigger">
+            <span>Q4: 为什么每次电脑重启都需要手动打开软件？如何开启开机自启和自动更新？</span>
+            <svg class="faq-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="transition: transform 0.2s ease;"><polyline points="6 9 12 15 18 9"></polyline></svg>
+          </button>
+          <div class="faq-content">
+            <p><strong>标准答案：</strong>在 <a href="clients.html#clash-verge" style="color:#0078d4; font-weight:600;">Clash Verge Rev</a> 设置中：勾选「开机自启 (Auto Launch)」与「静默启动 (Silent Start)」。在「订阅配置」右键选择「编辑」，将自动更新间隔设置为 <code>1440</code> 分钟（即 24 小时自动更新一次），即可实现开机全自动后台无感运行。</p>
+          </div>
+        </div>
+
+        <!-- Q5 -->
+        <div class="faq-item">
+          <button class="faq-trigger">
+            <span>Q5: 客户端的「规则模式 (Rule)」、「全局模式 (Global)」与「直连模式 (Direct)」有什么区别？</span>
+            <svg class="faq-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="transition: transform 0.2s ease;"><polyline points="6 9 12 15 18 9"></polyline></svg>
+          </button>
+          <div class="faq-content">
+            <ul style="padding-left: 20px; line-height: 1.8;">
+              <li><strong>规则模式 (Rule，强烈推荐日常使用)</strong>：智能分流。百度、淘宝、B站、国内网银走直连（速度快且不扣流量）；Google、YouTube、GitHub 自动走代理。</li>
+              <li><strong>全局模式 (Global)</strong>：所有网络请求强行走代理，极易导致国内应用变慢或被网银风控，仅用于临时排查外网打不开问题。</li>
+              <li><strong>直连模式 (Direct)</strong>：完全不经过任何节点，等同于关闭代理。</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Q6 -->
+        <div class="faq-item">
+          <button class="faq-trigger">
+            <span>Q6: 为什么手机扫描机场二维码能导入，电脑复制链接却不行？</span>
+            <svg class="faq-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="transition: transform 0.2s ease;"><polyline points="6 9 12 15 18 9"></polyline></svg>
+          </button>
+          <div class="faq-content">
+            <p><strong>标准答案：</strong>手机扫描二维码往往识别的是 <code>clash://install-config?url=...</code> 专属协议 Scheme，手机端自动解析。而电脑端如果在「新建配置」时直接粘贴这类带 scheme 的 URL，部分客户端无法识别。请复制纯 <code>https://...</code> 形式的订阅原始链接再填入电脑端。</p>
+          </div>
+        </div>
+
+        <!-- Q7 -->
+        <div class="faq-item">
+          <button class="faq-trigger">
+            <span>Q7: 什么是订阅转换？使用网上公开的在线订阅转换平台安全吗？</span>
+            <svg class="faq-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="transition: transform 0.2s ease;"><polyline points="6 9 12 15 18 9"></polyline></svg>
+          </button>
+          <div class="faq-content">
+            <p><strong>标准答案：</strong>订阅转换是将不同协议（如 V2Ray、SS 转为 Clash 格式）的工具。<strong>切勿使用来路不明的公共第三方订阅转换网站！</strong>其后端可能会记录并截流你的订阅 Token，导致流量被黑客盗用。正规机场后台均提供直链转换，无需第三方平台。</p>
+          </div>
+        </div>
+
+        <!-- Q8 -->
+        <div class="faq-item">
+          <button class="faq-trigger">
+            <span>Q8: 为什么提示「订阅已过期」或「流量耗尽」，但后台明明刚充值付款成功？</span>
+            <svg class="faq-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="transition: transform 0.2s ease;"><polyline points="6 9 12 15 18 9"></polyline></svg>
+          </button>
+          <div class="faq-content">
+            <p><strong>标准答案：</strong>充值之后，客户端本地缓存的文件并不会实时感应。请在客户端订阅列表上<strong>右键点击「更新订阅 (Update)」</strong>，强制拉取机场服务器最新的到期时间与流量配额数据。</p>
+          </div>
+        </div>
+
+        <!-- Q9 -->
+        <div id="tun-mode" class="faq-item">
+          <button class="faq-trigger">
+            <span>Q9: 什么是 TUN 模式？为什么打游戏、用外服软件或 Cursor 必须开启它？</span>
+            <svg class="faq-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="transition: transform 0.2s ease;"><polyline points="6 9 12 15 18 9"></polyline></svg>
+          </button>
+          <div class="faq-content">
+            <p><strong>标准答案：</strong>普通系统代理只对遵循系统 HTTP 代理规范的软件（如浏览器）有效；而 Steam/Epic 客户端、命令行 Terminal、Git、Cursor 及网游走底层 Socket 流量，不会主动读取系统代理。<strong>开启 TUN 虚拟网卡模式后，系统会创建虚拟驱动层接管全机流量</strong>，让一切软件透明走代理。</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Category 2: 连通性与网络报错排查 -->
+    <section id="cat-conn" style="margin-bottom: 36px;">
+      <div class="section-title-wrap">
+        <h2 class="section-title">🔌 二、连通性与网络报错排查 (Q10 - Q18)</h2>
+        <span style="font-size: 0.82rem; color: #64748b;">断网、打不开网页与报错急救方案</span>
+      </div>
+
+      <div class="fluent-card" style="padding: 10px 14px;">
+
+        <!-- Q10 -->
+        <div class="faq-item">
+          <button class="faq-trigger">
+            <span>Q10: 关闭代理软件后，电脑完全无法打开任何国内网页（断网）怎么急救？</span>
+            <svg class="faq-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="transition: transform 0.2s ease;"><polyline points="6 9 12 15 18 9"></polyline></svg>
+          </button>
+          <div class="faq-content">
+            <p><strong>10秒急救法：</strong>代理软件非正常退出（如关机或崩溃）导致系统代理残留。按快捷键 <code>Win + i</code> 打开设置 -> 点击「网络和 Internet」 -> 「代理」 -> 找到「手动设置代理」，<strong>将「使用代理服务器」开关关闭</strong>，刷新浏览器即刻恢复！</p>
+          </div>
+        </div>
+
+        <!-- Q11 -->
+        <div class="faq-item">
+          <button class="faq-trigger">
+            <span>Q11: 节点测速全部显示「Timeout 超时」或「-1ms」是怎么回事？</span>
+            <svg class="faq-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="transition: transform 0.2s ease;"><polyline points="6 9 12 15 18 9"></polyline></svg>
+          </button>
+          <div class="faq-content">
+            <p><strong>标准答案：</strong>① 订阅链接已失效或流量耗尽，核对机场后台；② 本地杀毒软件（360、火绒或 Windows Defender）拦截了内核网络出站，将客户端添加进信任区；③ 电脑系统时间偏差过大导致 TLS 握手失败，校准网络时间。</p>
+          </div>
+        </div>
+
+        <!-- Q12 -->
+        <div class="faq-item">
+          <button class="faq-trigger">
+            <span>Q12: 为什么有些节点能 Ping 通有延迟数字，但打开网页却提示「无法访问此网站」？</span>
+            <svg class="faq-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="transition: transform 0.2s ease;"><polyline points="6 9 12 15 18 9"></polyline></svg>
+          </button>
+          <div class="faq-content">
+            <p><strong>标准答案：</strong>Ping 测速只测试了你电脑到机场国内入口节点的延迟，<strong>不代表出口节点能否连接外网</strong>。如果入口到境外出口的中转断开、或者出口 IP 被目标网站封锁，就会出现有延迟但打不开网页的情况。切换到其他备用节点即可。</p>
+          </div>
+        </div>
+
+        <!-- Q13 -->
+        <div class="faq-item">
+          <button class="faq-trigger">
+            <span>Q13: 浏览器提示「您的连接不是私密连接 (NET::ERR_CERT_COMMON_NAME_INVALID)」怎么解决？</span>
+            <svg class="faq-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="transition: transform 0.2s ease;"><polyline points="6 9 12 15 18 9"></polyline></svg>
+          </button>
+          <div class="faq-content">
+            <p><strong>标准答案：</strong>这是由于客户端开启了 MITM 中间人解密或本地 HTTPS 证书损坏。在客户端设置中关闭「证书验证宽松模式」或重装客户端。另外请确认系统日期年份是否正确。</p>
+          </div>
+        </div>
+
+        <!-- Q14 -->
+        <div class="faq-item">
+          <button class="faq-trigger">
+            <span>Q14: 访问网站提示「502 Bad Gateway」或「504 Gateway Timeout」是本地还是机场问题？</span>
+            <svg class="faq-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="transition: transform 0.2s ease;"><polyline points="6 9 12 15 18 9"></polyline></svg>
+          </button>
+          <div class="faq-content">
+            <p><strong>标准答案：</strong>502/504 错误发生在代理链的后端。如果只有某个特定网站报 502，通常是目标网站服务器自身宕机；如果是访问 Google、YouTube 等全部报 502，说明是机场节点的中转服务器与落地机失联，请换节点或向机场提交工单。</p>
+          </div>
+        </div>
+
+        <!-- Q15 -->
+        <div class="faq-item">
+          <button class="faq-trigger">
+            <span>Q15: 手机开热点给电脑，电脑连上代理却无法翻墙怎么排查？</span>
+            <svg class="faq-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="transition: transform 0.2s ease;"><polyline points="6 9 12 15 18 9"></polyline></svg>
+          </button>
+          <div class="faq-content">
+            <p><strong>标准答案：</strong>移动蜂窝网络（尤其是移动 4G/5G）默认分配的 DNS 存在较严重的污染与 UDP 丢包。请在电脑的无线网卡属性中，将 DNS 手动改为 <code>114.114.114.114</code> 与 <code>223.5.5.5</code>，并在客户端内开启 TUN 模式。</p>
+          </div>
+        </div>
+
+        <!-- Q16 -->
+        <div class="faq-item">
+          <button class="faq-trigger">
+            <span>Q16: 为什么在公司局域网或大学校园网打不开代理，切换手机热点却正常？</span>
+            <svg class="faq-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="transition: transform 0.2s ease;"><polyline points="6 9 12 15 18 9"></polyline></svg>
+          </button>
+          <div class="faq-content">
+            <p><strong>标准答案：</strong>很多企业与高校部署了深信服等深层 DPI 流量审查行为管理设备，封锁了常见的非标端口与高频 UDP 流量（例如封锁了 Hysteria2）。对策：在客户端切换为<strong>标准 443 端口的 Shadowsocks 专线或 Vless Reality 节点</strong>，流量伪装成正常 HTTPS 网页即可绕过内网限制。</p>
+          </div>
+        </div>
+
+        <!-- Q17 -->
+        <div class="faq-item">
+          <button class="faq-trigger">
+            <span>Q17: 电脑休眠唤醒后，代理软件显示已连接但实际无法上网怎么办？</span>
+            <svg class="faq-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="transition: transform 0.2s ease;"><polyline points="6 9 12 15 18 9"></polyline></svg>
+          </button>
+          <div class="faq-content">
+            <p><strong>标准答案：</strong>系统从睡眠状态恢复时，网卡重置而代理内核 Socket 处于僵死状态。点击客户端的「重启核心 (Restart Core)」或将系统代理开关关掉重新开启即可立即恢复。</p>
+          </div>
+        </div>
+
+        <!-- Q18 -->
+        <div class="faq-item">
+          <button class="faq-trigger">
+            <span>Q18: 系统提示「代理服务器没有响应 (Proxy server is not responding)」如何排查？</span>
+            <svg class="faq-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="transition: transform 0.2s ease;"><polyline points="6 9 12 15 18 9"></polyline></svg>
+          </button>
+          <div class="faq-content">
+            <p><strong>标准答案：</strong>检查客户端本地监听端口（通常为 <code>7890</code> 或 <code>10808</code>）是否被其他软件占用。在客户端设置中将 Mixed Port 改为 <code>7897</code> 或其他未被占用的端口并重新保存启动。</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Category 3: 速度、延迟与线路专线 -->
+    <section id="cat-speed" style="margin-bottom: 36px;">
+      <div class="section-title-wrap">
+        <h2 class="section-title">⚡ 三、速度、延迟与专线解答 (Q19 - Q27)</h2>
+        <span style="font-size: 0.82rem; color: #64748b;">测速、晚高峰卡顿与节点选择原则</span>
+      </div>
+
+      <div class="fluent-card" style="padding: 10px 14px;">
+
+        <!-- Q19 -->
+        <div class="faq-item">
+          <button class="faq-trigger">
+            <span>Q19: 白天看 4K 秒开，为什么一到晚上 8 点到 11 点就疯狂卡顿转圈？</span>
+            <svg class="faq-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="transition: transform 0.2s ease;"><polyline points="6 9 12 15 18 9"></polyline></svg>
+          </button>
+          <div class="faq-content">
+            <p><strong>标准答案：</strong>晚高峰（20:00 - 23:00）国际骨干网公网出口严重拥堵，廉价普通直连/中转机场会出现高达 50% 以上丢包。<strong>彻底解决方案：</strong>选择全内网物理专线的 <a href="recommend.html#iplc" style="color:#0078d4; font-weight:600;">IPLC / IEPL 专线机场</a>（如速界、可信云、极连云），专线走内网光缆完全不挤公网出口，晚高峰依然能跑满带宽。</p>
+          </div>
+        </div>
+
+        <!-- Q20 -->
+        <div class="faq-item">
+          <button class="faq-trigger">
+            <span>Q20: 节点列表显示的延迟（比如 30ms）是越低就代表下载速度越快吗？</span>
+            <svg class="faq-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="transition: transform 0.2s ease;"><polyline points="6 9 12 15 18 9"></polyline></svg>
+          </button>
+          <div class="faq-content">
+            <p><strong>标准答案：</strong>不是！<strong>延迟（Latency）代表响应响应时间快慢，带宽（Bandwidth）才决定下载速度！</strong>30ms 的香港节点如果机场带宽超售，看视频照样卡；而 150ms 的美国专线节点如果带宽充足，能轻松秒开 8K 视频。看视频重带宽，玩网游重低延迟与低抖动。</p>
+          </div>
+        </div>
+
+        <!-- Q21 -->
+        <div class="faq-item">
+          <button class="faq-trigger">
+            <span>Q21: 机场节点名称里的「0.1x」、「1x」、「2x」、「5x」倍率是什么意思？</span>
+            <svg class="faq-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="transition: transform 0.2s ease;"><polyline points="6 9 12 15 18 9"></polyline></svg>
+          </button>
+          <div class="faq-content">
+            <p><strong>标准答案：</strong>倍率代表<strong>扣除套餐流量的乘数</strong>。使用 <code>0.1x</code> 节点下载 10GB 只扣除 1GB 流量（适合下载大文件）；使用 <code>1x</code> 节点用多少扣多少；使用 <code>5x</code> 节点下载 1GB 扣 5GB 流量（通常是成本昂贵的高质量专线或游戏加速节点）。</p>
+          </div>
+        </div>
+
+        <!-- Q22 -->
+        <div class="faq-item">
+          <button class="faq-trigger">
+            <span>Q22: IPLC 专线和普通公网中转、BGP 线路到底有什么实质区别？</span>
+            <svg class="faq-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="transition: transform 0.2s ease;"><polyline points="6 9 12 15 18 9"></polyline></svg>
+          </button>
+          <div class="faq-content">
+            <p><strong>标准答案：</strong>普通中转是国内服务器先走公网连接境外服务器，受国际出口波动和审查影响；而 IPLC 是电信/华为云在境内境外两端架设的<strong>局域网专线光纤，数据不过公网关口、不经过 GFW</strong>，具有零丢包、超低抖动与不过墙特质。详见 <a href="knowledge.html#iplc-intro" style="color:#0078d4; font-weight:600;">知识库专线原理科普</a>。</p>
+          </div>
+        </div>
+
+        <!-- Q23 -->
+        <div class="faq-item">
+          <button class="faq-trigger">
+            <span>Q23: 为什么测速软件（如 Speedtest）跑满千兆，看 YouTube 却只有几千 Kbps？</span>
+            <svg class="faq-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="transition: transform 0.2s ease;"><polyline points="6 9 12 15 18 9"></polyline></svg>
+          </button>
+          <div class="faq-content">
+            <p><strong>标准答案：</strong>Speedtest 是多线程爆破测速，测的是瞬时吞吐上限；而 YouTube 和视频串流依赖<strong>单线程持续稳定速率</strong>。如果节点丢包率高，TCP 会频繁重传导致拥塞窗口断崖式暴跌。选择单线程优秀的 IPLC 专线才是流畅看 4K 的根本。</p>
+          </div>
+        </div>
+
+        <!-- Q24 -->
+        <div class="faq-item">
+          <button class="faq-trigger">
+            <span>Q24: 香港、日本、新加坡、美国节点日常使用到底该怎么选？</span>
+            <svg class="faq-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="transition: transform 0.2s ease;"><polyline points="6 9 12 15 18 9"></polyline></svg>
+          </button>
+          <div class="faq-content">
+            <ul style="padding-left: 20px; line-height: 1.8;">
+              <li><strong>香港 (HK)</strong>：延迟最低（20-40ms），浏览网页与日常查资料首选（注意：香港节点默认不支持 ChatGPT/Gemini）。</li>
+              <li><strong>日本 (JP)</strong>：延迟低（40-70ms），版权限制少，支持全量 AI 与二次元动漫流媒体。</li>
+              <li><strong>新加坡 (SG)</strong>：东南亚枢纽，网络纯净，支持 TikTok 与 ChatGPT。</li>
+              <li><strong>美国 (US)</strong>：原生解锁全部欧美 AI 服务、学术论文库及美区流媒体，晚高峰带宽最大。</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Q25 -->
+        <div class="faq-item">
+          <button class="faq-trigger">
+            <span>Q25: 为什么玩外服游戏延迟很高还会跳 ping？机场节点适合用来打网游吗？</span>
+            <svg class="faq-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="transition: transform 0.2s ease;"><polyline points="6 9 12 15 18 9"></polyline></svg>
+          </button>
+          <div class="faq-content">
+            <p><strong>标准答案：</strong>机场节点主要是为了高带宽网页和视频设计的 TCP/HTTP 代理，而 FPS 竞技网游需要严格的 UDP 全锥型 NAT 与极低抖动。如果机场未对游戏单独优化，跳 ping 是正常的。建议使用专门的游戏加速器，或选用 <a href="clients.html#netch" style="color:#0078d4; font-weight:600;">Netch</a> 配合 IPLC 专线进行游戏加速。</p>
+          </div>
+        </div>
+
+        <!-- Q26 -->
+        <div class="faq-item">
+          <button class="faq-trigger">
+            <span>Q26: 节点名称中的「BGP 隧道」、「公网中转」、「内网专线」分别是什么意思？</span>
+            <svg class="faq-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="transition: transform 0.2s ease;"><polyline points="6 9 12 15 18 9"></polyline></svg>
+          </button>
+          <div class="faq-content">
+            <p><strong>品质金字塔：</strong>内网专线 (IPLC/IEPL) &gt; BGP 隧道中转 &gt; 普通单线中转 &gt; 公网直连。BGP 入口会根据你的宽带运营商（移动/电信/联通）智能分配最近机房，再通过加密隧道将数据传输出境，属于高性价比主流架构。</p>
+          </div>
+        </div>
+
+        <!-- Q27 -->
+        <div class="faq-item">
+          <button class="faq-trigger">
+            <span>Q27: 为什么同一个机场，电信网络用得很爽，中国移动宽带却频繁断流？</span>
+            <svg class="faq-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="transition: transform 0.2s ease;"><polyline points="6 9 12 15 18 9"></polyline></svg>
+          </button>
+          <div class="faq-content">
+            <p><strong>标准答案：</strong>中国移动的国际出口带宽路由与电信/联通完全不同，跨网穿透时延迟高且 QoS 限速极其严格。对策：选择具备「三网 BGP 多入口自动调度」的机场（如 <a href="reviews.html#speed" style="color:#0078d4; font-weight:600;">速界机场</a> 或 <a href="reviews.html#kexin" style="color:#0078d4; font-weight:600;">可信云</a>），移动用户会自动接入移动专线入口。</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Category 4: AI 工具与流媒体解锁答疑 -->
+    <section id="cat-ai" style="margin-bottom: 36px;">
+      <div class="section-title-wrap">
+        <h2 class="section-title">🤖 四、AI 工具与流媒体解锁 (Q28 - Q36)</h2>
+        <span style="font-size: 0.82rem; color: #64748b;">解决 ChatGPT / Claude / Netflix 阻断与封号</span>
+      </div>
+
+      <div class="fluent-card" style="padding: 10px 14px;">
+
+        <!-- Q28 -->
+        <div id="openai-block" class="faq-item">
+          <button class="faq-trigger">
+            <span>Q28: 为什么能看 4K YouTube，却打不开 ChatGPT 或 Claude 提示 Access Denied？</span>
+            <svg class="faq-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="transition: transform 0.2s ease;"><polyline points="6 9 12 15 18 9"></polyline></svg>
+          </button>
+          <div class="faq-content">
+            <p><strong>标准答案：</strong>YouTube 属于流媒体，只要求线路吞吐量大；而 OpenAI 与 Claude 接入了全球最严苛的反欺诈风控库（如 Cloudflare Turnstile、IP2Location）。廉价机场使用的机房 DataCenter IP 早已被拉黑。<strong>解决方案：</strong>前往 <a href="ai-tools.html" style="color:#0078d4; font-weight:600;">AI工具专区</a> 选用带有「原生住宅双 ISP」的纯净节点。</p>
+          </div>
+        </div>
+
+        <!-- Q29 -->
+        <div class="faq-item">
+          <button class="faq-trigger">
+            <span>Q29: 访问 OpenAI 提示「Oops, unable to load site」或无限循环验证码怎么破？</span>
+            <svg class="faq-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="transition: transform 0.2s ease;"><polyline points="6 9 12 15 18 9"></polyline></svg>
+          </button>
+          <div class="faq-content">
+            <p><strong>标准答案：</strong>这是本地浏览器被记录了污染的 Cookie。按下 <code>Ctrl + Shift + N</code> 打开浏览器隐私无痕窗口直接访问；或在 Chrome 设置中搜索「清理浏览数据」，清除 <code>chatgpt.com</code> 的本地缓存与 Cookie。</p>
+          </div>
+        </div>
+
+        <!-- Q30 -->
+        <div class="faq-item">
+          <button class="faq-trigger">
+            <span>Q30: 为什么使用 Claude 3.5 Sonnet 很容易被突然封号或退款？</span>
+            <svg class="faq-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="transition: transform 0.2s ease;"><polyline points="6 9 12 15 18 9"></polyline></svg>
+          </button>
+          <div class="faq-content">
+            <p><strong>标准防封指南：</strong>Anthropic 风控极其敏感。① 严禁频繁更换不同国家的节点登录；② 严禁使用万人骑的机房 IP 注册；③ 绑定干净的外区手机号与海外虚拟信用卡；④ 客户端中将 <code>anthropic.com</code> 与 <code>claude.ai</code> 域名分流固定到唯一的原生美国节点。</p>
+          </div>
+        </div>
+
+        <!-- Q31 -->
+        <div class="faq-item">
+          <button class="faq-trigger">
+            <span>Q31: 什么是「双 ISP 住宅家宽原生 IP」？与普通机房数据中心 IP 有何不同？</span>
+            <svg class="faq-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="transition: transform 0.2s ease;"><polyline points="6 9 12 15 18 9"></polyline></svg>
+          </button>
+          <div class="faq-content">
+            <p><strong>标准答案：</strong>机房数据中心 IP（Hosting/DataCenter）属于阿里云、AWS 等云厂商机柜，欺诈分高达 80+；而双 ISP 住宅 IP 是从海外本地家庭宽带运营商（如 AT&T、Verizon、Comcast）采购的真实住宅 IP，欺诈分接近 0，被各大平台视为真实当地居民上网，完全免受风控。</p>
+          </div>
+        </div>
+
+        <!-- Q32 -->
+        <div class="faq-item">
+          <button class="faq-trigger">
+            <span>Q32: Netflix 奈飞提示「您似乎正在使用解除封锁工具或代理」怎么解决？</span>
+            <svg class="faq-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="transition: transform 0.2s ease;"><polyline points="6 9 12 15 18 9"></polyline></svg>
+          </button>
+          <div class="faq-content">
+            <p><strong>标准答案：</strong>当前出口节点的 IP 被 Netflix 加入了代理黑名单。切换节点名称带有「Netflix」、「NF」或「原生」标记的专用节点；如仍卡住，退出 Netflix 账号清理 Cookie 后重新登录。</p>
+          </div>
+        </div>
+
+        <!-- Q33 -->
+        <div class="faq-item">
+          <button class="faq-trigger">
+            <span>Q33: 为什么 Disney+ 登录后一直黑屏转圈或者提示「Error Code 73」？</span>
+            <svg class="faq-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="transition: transform 0.2s ease;"><polyline points="6 9 12 15 18 9"></polyline></svg>
+          </button>
+          <div class="faq-content">
+            <p><strong>标准答案：</strong>Error 73 说明 Disney+ 识别到了代理工具的区域冲突，或者你的 IPv6 泄露了中国大陆地址。在客户端设置中<strong>关闭 IPv6 开关</strong>，并选用新加坡或美国的原生节点。</p>
+          </div>
+        </div>
+
+        <!-- Q34 -->
+        <div class="faq-item">
+          <button class="faq-trigger">
+            <span>Q34: 在 Cursor、Windsurf 或 VS Code 中使用 Copilot，为什么频繁报错网络中断？</span>
+            <svg class="faq-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="transition: transform 0.2s ease;"><polyline points="6 9 12 15 18 9"></polyline></svg>
+          </button>
+          <div class="faq-content">
+            <p><strong>标准答案：</strong>因为现代 AI 编程编辑器底层的 Node/Electron 独立进程不会继承操作系统的标准代理。在 <a href="clients.html#clash-verge" style="color:#0078d4; font-weight:600;">Clash Verge Rev</a> 设置中<strong>开启「TUN 模式」</strong>，即可全自动实现全局底层代理捕获。</p>
+          </div>
+        </div>
+
+        <!-- Q35 -->
+        <div class="faq-item">
+          <button class="faq-trigger">
+            <span>Q35: 为什么香港节点无法访问 ChatGPT 和 Google Gemini？</span>
+            <svg class="faq-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="transition: transform 0.2s ease;"><polyline points="6 9 12 15 18 9"></polyline></svg>
+          </button>
+          <div class="faq-content">
+            <p><strong>标准答案：</strong>这是 OpenAI 和 Google 的官方地区限制政策，ChatGPT 与 Gemini 官方明确不支持中国香港（Hong Kong）地区 IP。日常使用 AI 服务请切换至台湾、日本、新加坡或美国节点。</p>
+          </div>
+        </div>
+
+        <!-- Q36 -->
+        <div class="faq-item">
+          <button class="faq-trigger">
+            <span>Q36: TikTok 国际版刷不出视频、黑屏或提示没有网络连接怎么排查？</span>
+            <svg class="faq-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="transition: transform 0.2s ease;"><polyline points="6 9 12 15 18 9"></polyline></svg>
+          </button>
+          <div class="faq-content">
+            <p><strong>标准答案：</strong>TikTok 手机 App 会读取中国移动/电信 SIM 卡信息（MCC/MNC 代码）。国内手机插卡状态下会强制锁区。<strong>对策：</strong>拔掉国内 SIM 卡或使用无卡备用机，将手机系统语言和时区改为目的地国家，并选用原生 IP 节点。</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Category 5: 隐私安全、DNS 与防封锁 -->
+    <section id="cat-security" style="margin-bottom: 36px;">
+      <div class="section-title-wrap">
+        <h2 class="section-title">🛡️ 五、隐私安全与防封锁指南 (Q37 - Q43)</h2>
+        <span style="font-size: 0.82rem; color: #64748b;">保护个人真实位置与网络操作安全</span>
+      </div>
+
+      <div class="fluent-card" style="padding: 10px 14px;">
+
+        <!-- Q37 -->
+        <div class="faq-item">
+          <button class="faq-trigger">
+            <span>Q37: 个人在家里翻墙查资料、看视频会被电信运营商直接抓到吗？</span>
+            <svg class="faq-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="transition: transform 0.2s ease;"><polyline points="6 9 12 15 18 9"></polyline></svg>
+          </button>
+          <div class="faq-content">
+            <p><strong>客观合规解答：</strong>运营商能够监测到你与境内中转机房之间存在高频流量交互，但由于数据全程采用高强度的 AES-256 或 ChaCha20 加密，运营商<strong>无法知道你在外网浏览的具体网页内容和视频细节</strong>。只要遵守国家法律法规，不从事任何违法政治言论与黑产交易，纯技术查阅与娱乐通常处于安全边界内。</p>
+          </div>
+        </div>
+
+        <!-- Q38 -->
+        <div class="faq-item">
+          <button class="faq-trigger">
+            <span>Q38: 什么是 DNS 污染和 DNS 泄露？如何确保国外流量不被偷窥？</span>
+            <svg class="faq-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="transition: transform 0.2s ease;"><polyline points="6 9 12 15 18 9"></polyline></svg>
+          </button>
+          <div class="faq-content">
+            <p><strong>标准答案：</strong>如果解析国外网站域名时依然走你本地电信/联通 DNS，运营商就能记录下你查询的所有外网域名。在客户端 DNS 设置中开启「Fake-IP 模式」，并将远程解析 DNS 设置为 <code>1.1.1.1</code> 或 <code>8.8.8.8</code>，所有解析均在境外服务器端完成，实现 100% 防泄露。</p>
+          </div>
+        </div>
+
+        <!-- Q39 -->
+        <div class="faq-item">
+          <button class="faq-trigger">
+            <span>Q39: 什么是 WebRTC 真实 IP 泄露？怎么检测与防御？</span>
+            <svg class="faq-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="transition: transform 0.2s ease;"><polyline points="6 9 12 15 18 9"></polyline></svg>
+          </button>
+          <div class="faq-content">
+            <p><strong>标准答案：</strong>WebRTC 是浏览器音视频通信接口，它会绕过代理直接探测你本地真实的局域网和外网物理 IP。访问 <code>browserleaks.com/webrtc</code> 即可测试。防御对策：在 Chrome 或 Edge 安装「WebRTC Control」扩展插件将其关闭。</p>
+          </div>
+        </div>
+
+        <!-- Q40 -->
+        <div class="faq-item">
+          <button class="faq-trigger">
+            <span>Q40: 机场运营者能看到我访问的网页内容和账号密码吗？HTTPS 会被劫持吗？</span>
+            <svg class="faq-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="transition: transform 0.2s ease;"><polyline points="6 9 12 15 18 9"></polyline></svg>
+          </button>
+          <div class="faq-content">
+            <p><strong>标准答案：</strong>不能！现代互联网 99.9% 网站均全站采用端到端 <strong>HTTPS (TLS)</strong> 加密。机场服务器只能看到你连接了哪个网站域名和消耗了多少流量，绝对无法解密传输中的明文表单、密码或聊天记录。只要不随意信任来路不明的自签 Root CA 根证书，通信就是安全的。</p>
+          </div>
+        </div>
+
+        <!-- Q41 -->
+        <div class="faq-item">
+          <button class="faq-trigger">
+            <span>Q41: 手机上安装的科学上网软件会偷偷扫描相册或偷跑后台流量吗？</span>
+            <svg class="faq-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="transition: transform 0.2s ease;"><polyline points="6 9 12 15 18 9"></polyline></svg>
+          </button>
+          <div class="faq-content">
+            <p><strong>标准答案：</strong>本站推荐的 <a href="clients.html" style="color:#0078d4; font-weight:600;">Clash Meta、v2rayNG、Shadowrocket</a> 均为纯净开源或经过 Apple 官方审核的工具，只申请网络 VpnService 权限，绝不索取相册、通讯录与麦克风权限。谨防百度广告下载的第三方仿冒木马安装包。</p>
+          </div>
+        </div>
+
+        <!-- Q42 -->
+        <div class="faq-item">
+          <button class="faq-trigger">
+            <span>Q42: 为什么有些国内软件（如微信、淘宝、支付宝）挂代理会提示异地登录或人脸验证？</span>
+            <svg class="faq-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="transition: transform 0.2s ease;"><polyline points="6 9 12 15 18 9"></polyline></svg>
+          </button>
+          <div class="faq-content">
+            <p><strong>标准答案：</strong>因为你误开启了「全局模式 (Global)」，导致国内 App 误认为你从香港或美国机房登录，触发了安全风控。切回<strong>「规则模式 (Rule)」</strong>，并在分流设置中勾选中国大陆直连即可避免此问题。</p>
+          </div>
+        </div>
+
+        <!-- Q43 -->
+        <div class="faq-item">
+          <button class="faq-trigger">
+            <span>Q43: 为什么有的网站只要开代理就强制弹出 Google reCAPTCHA 点图片验证码？</span>
+            <svg class="faq-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="transition: transform 0.2s ease;"><polyline points="6 9 12 15 18 9"></polyline></svg>
+          </button>
+          <div class="faq-content">
+            <p><strong>标准答案：</strong>说明你当前连接的节点 IP 共享人数过多，该 IP 在短时间内发起了大量请求，被 Google 识别为可疑爬虫。切换到冷门节点或纯净原生 IP 节点即可免受验证码打扰。</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Category 6: 选购指南、防跑路与避坑 -->
+    <section id="cat-purchase" style="margin-bottom: 36px;">
+      <div class="section-title-wrap">
+        <h2 class="section-title">💰 六、选购防坑与避雷指南 (Q44 - Q50)</h2>
+        <span style="font-size: 0.82rem; color: #64748b;">保护资金安全，拒绝被割韭菜</span>
+      </div>
+
+      <div class="fluent-card" style="padding: 10px 14px;">
+
+        <!-- Q44 -->
+        <div class="faq-item">
+          <button class="faq-trigger">
+            <span>Q44: 新手第一次接触机场，到底买「月付」还是「年付」更合算？</span>
+            <svg class="faq-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="transition: transform 0.2s ease;"><polyline points="6 9 12 15 18 9"></polyline></svg>
+          </button>
+          <div class="faq-content">
+            <p><strong>黄金铁律：首推月付！</strong>首次接触任何机场，无论宣传多么天花乱坠，请务必先选择「月付」或「体验包」，在自己本地网络跑满晚高峰 1-2 个月，确认稳定且客服响应良好后再考虑年付优惠。</p>
+          </div>
+        </div>
+
+        <!-- Q45 -->
+        <div class="faq-item">
+          <button class="faq-trigger">
+            <span>Q45: 为什么有些宣传「9.9元一年不限流量」的超低价机场千万不能买？</span>
+            <svg class="faq-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="transition: transform 0.2s ease;"><polyline points="6 9 12 15 18 9"></polyline></svg>
+          </button>
+          <div class="faq-content">
+            <p><strong>标准答案：</strong>物理带宽和服务器采购具有硬性成本（专线带宽成本每 GB 均在数毛钱）。9.9 元一年的套餐在经济学上完全无法维持运营，是典型的「杀猪盘套路」：低价引诱成千上万人付款后，一两个月内直接拔线失联跑路。详见 <a href="warning.html" style="color:#e81123; font-weight:600;">机场跑路预警库</a>。</p>
+          </div>
+        </div>
+
+        <!-- Q46 -->
+        <div class="faq-item">
+          <button class="faq-trigger">
+            <span>Q46: 怎么判断一家机场是不是即将跑路？有哪些典型前兆？</span>
+            <svg class="faq-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="transition: transform 0.2s ease;"><polyline points="6 9 12 15 18 9"></polyline></svg>
+          </button>
+          <div class="faq-content">
+            <p><strong>三大危险前兆：</strong>① 官方 TG 交流群从允许用户发言突然改为<strong>全员永久禁言</strong>；② 工单超过 48 小时无人回复；③ 突然推出前所未有的「骨折促销」（例如终身只要 99 元），这是明显的卷款跑路前兆。</p>
+          </div>
+        </div>
+
+        <!-- Q47 -->
+        <div class="faq-item">
+          <button class="faq-trigger">
+            <span>Q47: 什么是「按量付费 / 不限时流量包」？适合什么样的人群？</span>
+            <svg class="faq-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="transition: transform 0.2s ease;"><polyline points="6 9 12 15 18 9"></polyline></svg>
+          </button>
+          <div class="faq-content">
+            <p><strong>标准答案：</strong>普通套餐按月清零，而按量付费包（如 <a href="reviews.html#edge" style="color:#0078d4; font-weight:600;">边缘节点</a> 或 <a href="reviews.html#yunjiexian" style="color:#0078d4; font-weight:600;">云界线</a> 的永久不限时包）购买 100GB 永久不清零。非常适合平时翻墙频率低、只查查论文或备用防失联的轻度用户。</p>
+          </div>
+        </div>
+
+        <!-- Q48 -->
+        <div class="faq-item">
+          <button class="faq-trigger">
+            <span>Q48: 为什么绝大多数机场的购买协议都明确写着「虚拟商品售出概不退款」？</span>
+            <svg class="faq-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="transition: transform 0.2s ease;"><polyline points="6 9 12 15 18 9"></polyline></svg>
+          </button>
+          <div class="faq-content">
+            <p><strong>行业潜规则揭秘：</strong>因为数字订阅激活后上游节点已产生带宽配额与手续费开销。为避免扯皮，这正是梯子当权反复强调「月付上车」的根本原因，试错成本只有十几元，不满意随时换掉。</p>
+          </div>
+        </div>
+
+        <!-- Q49 -->
+        <div class="faq-item">
+          <button class="faq-trigger">
+            <span>Q49: 经常遇到节点失联怎么办？为什么常备「一主一副」双机场必不可少？</span>
+            <svg class="faq-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="transition: transform 0.2s ease;"><polyline points="6 9 12 15 18 9"></polyline></svg>
+          </button>
+          <div class="faq-content">
+            <p><strong>生产力高可用策略：</strong>跨境网络受政策与光缆故障影响是不可抗力。主力选择全内网物理专线（如 <a href="reviews.html#speed" style="color:#0078d4; font-weight:600;">速界机场</a> 或 <a href="reviews.html#kexin" style="color:#0078d4; font-weight:600;">可信云</a>）保障日常极速；另备一张几块钱按量付费或平价副卡，遇到主线路维护时一秒无缝切换。</p>
+          </div>
+        </div>
+
+        <!-- Q50 -->
+        <div class="faq-item">
+          <button class="faq-trigger">
+            <span>Q50: 本站（梯子当权 tizidangquan.online）收录推荐的机场可靠性如何保障？</span>
+            <svg class="faq-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="transition: transform 0.2s ease;"><polyline points="6 9 12 15 18 9"></polyline></svg>
+          </button>
+          <div class="faq-content">
+            <p><strong>梯子当权核心原则：</strong>本站收录的 15 家服务商均经过我们团队真实自费购买、后台节点核验、长期跟踪晚高峰表现与工单抽查。坚持「好的客观推荐，有缺点的直说，差的坚决进黑名单预警」，严守中立客观防坑底线。</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Website Legal & Affiliate Disclaimer -->
+    <div id="disclaimer" class="fluent-card" style="padding: 28px; margin-bottom: 24px;">
+      <h3 style="font-size: 1.25rem; color: #182d46; margin-bottom: 12px;">⚖️ 梯子当权网站声明与联盟营销规则</h3>
+      <div style="font-size: 0.9rem; color: #495a6d; line-height: 1.8;">
+        <p>1. <strong>免责声明：</strong>本站（tizidangquan.online）是一个客观记录网络服务与海外技术评测的公益导航博客。本站不运营、不自建、不销售任何 VPN 或机场服务，所有节点数据均为公网测试采集。使用者应严格遵守所在地区的法律法规，禁止使用跨境网络从事任何违法违纪活动。</p>
+        <p style="margin-top: 10px;" id="affiliate">2. <strong>推广与联盟说明 (Affiliate Disclosure)：</strong>为了覆盖服务器运维与自费购卡测速的成本，本站部分外部链接带有推荐代号。通过本站链接完成购买不会增加您的任何一分费用，甚至可以享受本站独家谈判的优惠折扣码。无论是否与本站存在联盟合作，我们均坚持「差的坚决预警，好的客观推荐」的基本底线。</p>
+        <p style="margin-top: 10px;" id="contact">3. <strong>收录申请与联系方式：</strong>如果您是正规老牌机场运营团队，且支持 7 天内无理由退款、承诺不跑路，欢迎提交测速样卡。联系邮箱：<code>contact@tizidangquan.online</code>。</p>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="footer-container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <h4>梯子当权 (tizidangquan.online)</h4>
+          <p>梯子当权致力于为广大互联网工作者、开发者、科研人员与留学生提供真实、客观、无虚标的科学上网机场收录。我们坚持长期跟踪测速与异常预警，好的客观夸，差的坚决曝光。</p>
+        </div>
+        <div class="footer-col">
+          <h5>机场栏目</h5>
+          <ul>
+            <li><a href="recommend.html">机场推荐</a></li>
+            <li><a href="ranking.html">机场排行</a></li>
+            <li><a href="reviews.html">品牌评测</a></li>
+            <li><a href="warning.html">机场预警</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5>实用工具</h5>
+          <ul>
+            <li><a href="ai-tools.html">AI工具专线</a></li>
+            <li><a href="clients.html">客户端下载</a></li>
+            <li><a href="faq.html">问题中心</a></li>
+            <li><a href="knowledge.html">机场知识库</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5>热门客户端</h5>
+          <ul>
+            <li><a href="clients.html#clash-verge">Clash Verge Rev</a></li>
+            <li><a href="clients.html#v2rayn">v2rayN</a></li>
+            <li><a href="clients.html#shadowrocket">Shadowrocket</a></li>
+            <li><a href="clients.html#flclash">FlClash</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5>网站声明</h5>
+          <ul>
+            <li><a href="faq.html#disclaimer">免责声明</a></li>
+            <li><a href="faq.html#affiliate">推广与联盟合作</a></li>
+            <li><a href="faq.html#contact">联系与收录提交</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2026 梯子当权 tizidangquan.online · 保护网络自由 · 保留所有权利。</p>
+      </div>
+    </div>
+  </footer>
+
+  <button id="backToTop" class="back-to-top" aria-label="回到顶部">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+      <polyline points="18 15 12 9 6 15"></polyline>
+    </svg>
+  </button>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

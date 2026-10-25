@@ -1,0 +1,167 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>科学上网安全防范：DNS 污染、WebRTC 泄露与真实 IP 防护全流程 - 梯子当权知识库</title>
+  <meta name="description" content="科学上网时你的真实身份真的安全吗？深度剖析三大隐私泄露漏洞：运营商DNS解析污染与日志窃听、WebRTC穿透代理暴露大陆真实宽带公网IP、以及IPv6单边泄露。手把手教你如何通过DoH加密、浏览器加固与Clash内核配置实现100%全匿名防护。">
+  <link rel="icon" type="image/svg+xml" href="../assets/logo.svg">
+  <link rel="stylesheet" href="../css/fluent.css">
+  <link rel="canonical" href="https://tizidangquan.online/articles/article-19.html">
+
+  <!-- Geo Targeting -->
+  <meta name="geo.region" content="HK">
+  <meta name="geo.placename" content="Hong Kong">
+  <meta name="geo.position" content="22.3193;114.1694">
+  <meta name="ICBM" content="22.3193, 114.1694">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://tizidangquan.online/articles/article-19.html">
+  <meta property="og:title" content="科学上网安全防范：DNS 污染、WebRTC 泄露与真实 IP 防护全流程 - 梯子当权知识库">
+  <meta property="og:description" content="科学上网时你的真实身份真的安全吗？深度剖析三大隐私泄露漏洞：运营商DNS解析污染与日志窃听、WebRTC穿透代理暴露大陆真实宽带公网IP、以及IPv6单边泄露。手把手教你如何通过DoH加密、浏览器加固与Clash内核配置实现100%全匿名防护。">
+  <meta property="og:image" content="https://tizidangquan.online/assets/logo.svg">
+  <meta property="og:site_name" content="梯子当权">
+
+  <!-- GEO Schema.org TechArticle for AI Engines -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "TechArticle",
+    "headline": "科学上网安全防范：DNS 污染、WebRTC 泄露与真实 IP 防护全流程 - 梯子当权知识库",
+    "description": "科学上网时你的真实身份真的安全吗？深度剖析三大隐私泄露漏洞：运营商DNS解析污染与日志窃听、WebRTC穿透代理暴露大陆真实宽带公网IP、以及IPv6单边泄露。手把手教你如何通过DoH加密、浏览器加固与Clash内核配置实现100%全匿名防护。",
+    "url": "https://tizidangquan.online/articles/article-19.html",
+    "inLanguage": "zh-CN",
+    "publisher": {
+      "@type": "Organization",
+      "name": "梯子当权",
+      "url": "https://tizidangquan.online/"
+    }
+  }
+  </script>
+</head>
+<body>
+  <div class="fluent-strip"><span></span><span></span><span></span><span></span></div>
+
+  <header class="site-header">
+    <div class="header-container">
+      <a href="../index.html" class="brand">
+        <img src="../assets/logo.svg" alt="梯子当权 Logo">
+        <span>梯子当权</span>
+        <span class="brand-badge">tizidangquan.online</span>
+      </a>
+      <nav id="navMenu" class="nav-menu">
+        <a href="../index.html" class="nav-link">首页</a>
+        <a href="../recommend.html" class="nav-link">机场推荐</a>
+        <a href="../ranking.html" class="nav-link">机场排行</a>
+        <a href="../reviews.html" class="nav-link">品牌评测</a>
+        <a href="../ai-tools.html" class="nav-link">AI工具</a>
+        <a href="../clients.html" class="nav-link">客户端</a>
+        <a href="../faq.html" class="nav-link">问题中心</a>
+        <a href="../warning.html" class="nav-link">机场预警</a>
+        <a href="../knowledge.html" class="nav-link active">机场知识库</a>
+      </nav>
+      <div class="header-actions">
+        <button id="menuToggle" class="menu-toggle" aria-label="切换导航菜单">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main class="main-wrapper">
+    <nav class="breadcrumb" aria-label="面包屑">
+      <a href="../index.html">首页</a>
+      <span class="breadcrumb-separator">/</span>
+      <a href="../knowledge.html">机场知识库</a>
+      <span class="breadcrumb-separator">/</span>
+      <span>正文</span>
+    </nav>
+
+    <article class="fluent-card" style="padding: 36px 32px; max-width: 960px; margin: 0 auto;">
+      <header style="margin-bottom: 24px; border-bottom: 1px solid rgba(0,0,0,0.06); padding-bottom: 20px;">
+        <span class="tag-accent" style="margin-bottom: 10px; display: inline-block;">网络安全与匿名防护</span>
+        <h1 style="font-size: 1.85rem; color: #182d46; line-height: 1.35; margin-bottom: 12px;">科学上网安全防范：DNS 污染、WebRTC 泄露与真实 IP 防护全流程</h1>
+        <div style="font-size: 0.85rem; color: #64748b; display: flex; gap: 16px; flex-wrap: wrap;">
+          <span>📅 发布时间：2026年10月</span>
+          <span>⏱️ 阅读时长：约 9 分钟 (2200 字)</span>
+          <span>✍️ 作者：梯子当权评测组</span>
+        </div>
+      </header>
+
+      <div style="font-size: 0.95rem; color: #2d3b4b; line-height: 1.85;">
+        <p>在许多使用科学上网的用户心中，往往存在着一个巨大的心理安全误区：<strong>“只要我在电脑或手机上打开了代理开关，我的一切上网行为就彻底隐身了，运营商和任何网站都不知道我是谁。”</strong></p>
+        <p>然而在残酷的网络安全攻防现实中，这种想法极其危险。即使你的代理连接本身经过了强加密，现代操作系统与浏览器的诸多底层漏洞依然可能在<strong>无声无息中将你的真实大陆公网 IP、真实运营商身份、甚至你正在访问哪些敏感域名的全量清单，直接暴露给第三方和中间人监管系统</strong>。</p>
+        <p>本文由梯子当权（tizidangquan.online）为你逐一拆解「DNS 泄露与污染」、「WebRTC 穿透漏洞」、「IPv6 旁路逃逸」三大致命泄密隐患，并手把手提供加固防御方案。</p>
+
+        <h2 style="font-size: 1.35rem; color: #0078d4; margin: 28px 0 12px;">一、三大致命隐私泄露渠道底层剖析</h2>
+
+        <h3 style="font-size: 1.1rem; color: #1e293b; margin: 16px 0 8px;">1. DNS 泄露与污染（DNS Leak & Poisoning）</h3>
+        <p>在网络通信中，你输入 <code>www.google.com</code> 时，第一步必须通过 DNS 查询将域名翻译成 IP 地址。如果你的代理客户端配置不当：</p>
+        <ul>
+          <li><strong>运营商记录全部域名</strong>：你的浏览器依然在向国内中国电信、移动或联通的 LocalDNS 发送未加密的 UDP 53 端口查询。虽然你的后续网页内容走的是代理加密，<strong>但国内运营商已经在服务器日志里精确记录下了你在什么时间、查询了什么海外网址</strong>！</li>
+          <li><strong>GFW 污染投毒</strong>：GFW 在出口旁路检测到敏感域名的 DNS 查询，会抢先在正规服务器之前向你返回一个错误的伪造 IP（例如返回 <code>208.67.222.222</code> 或虚假 IP 段），导致客户端直接连接错误目标而报错超时。</li>
+        </ul>
+
+        <h3 style="font-size: 1.1rem; color: #1e293b; margin: 16px 0 8px;">2. WebRTC 穿透漏洞（最阴险的 IP 剥离者）</h3>
+        <p><strong>WebRTC (Web Real-Time Communication)</strong> 是现代浏览器（Chrome、Edge、Safari、Firefox）内置的一项音视频实时通信标准协议。为了让两台处于不同内网的电脑直接建立 P2P 视讯连接，WebRTC 会绕过浏览器的应用层代理设置，直接向外部 STUN 服务器发送原始 UDP 请求。</p>
+        <p><strong>后果</strong>：任何海外网页只需嵌入一段短短数行的 JavaScript 代码，就能强行读取并上报你的<strong>真实本地内网 IP（如 192.168.1.10）与你在中国大陆电信/移动的真实公网 IP！</strong>这也是为什么很多人明明挂着美国代理，在访问某些风控严格的网站时依然被一眼识破的原因。</p>
+
+        <h3 style="font-size: 1.1rem; color: #1e293b; margin: 16px 0 8px;">3. IPv6 旁路逃逸（IPv6 Leak）</h3>
+        <p>目前国内三大运营商早已全面普及了 IPv6，你的手机和电脑通常会同时分配到一个 IPv4 和一个公网 IPv6 地址。而市面上部分老旧机场或廉价中转节点<strong>仅支持 IPv4 转发，根本没有部署 IPv6 节点</strong>。</p>
+        <p>当目标网站（如 Google、YouTube、Netflix）同时支持 IPv4 和 IPv6 时，操作系统的双栈协议机制会<strong>优先通过本地不受保护的 IPv6 接口发起直连</strong>，导致流量直接裸奔出境，遭遇 GFW 阻断并彻底暴露真实地理位置。</p>
+
+        <h2 style="font-size: 1.35rem; color: #0078d4; margin: 28px 0 12px;">二、全流程加固实战配置（打造坚不可摧的防线）</h2>
+
+        <h3 style="font-size: 1.1rem; color: #1e293b; margin: 16px 0 8px;">防线 1：彻底根除 WebRTC 泄露</h3>
+        <ol style="padding-left: 20px; line-height: 1.85;">
+          <li><strong>安装浏览器安全插件</strong>：在 Chrome 或 Edge 应用商店安装 <code>WebRTC Control</code> 或 <code>uBlock Origin</code>；</li>
+          <li>在 WebRTC Control 中将选项切换为 <strong>「Disable WebRTC completely（完全禁用 WebRTC）」</strong>；</li>
+          <li><strong>验证测试</strong>：访问国际权威测试站 <code>browserleaks.com/webrtc</code>。确认「Public IP Address」一栏显示为空（Not Detected）或只显示当前代理服务器的 IP，绝不出现任何国内 IP。</li>
+        </ol>
+
+        <h3 style="font-size: 1.1rem; color: #1e293b; margin: 16px 0 8px;">防线 2：配置加密 DNS (DoH / Fake-IP) 彻底杜绝 DNS 泄露</h3>
+        <p>在 <a href="../clients.html#clash-verge" style="color:#0078d4;font-weight:600;">Clash Verge Rev</a> 或相关客户端中，采用以下黄金 DNS 策略：</p>
+        <ul>
+          <li><strong>DNS 运行模式</strong>：开启 <code>enhanced-mode: fake-ip</code>。所有境外域名直接在本地返回虚拟 IP，真正的域名解析完全交由境外代理服务器在远程完成，本地根本不发生跨国 DNS 往返，零泄露风险；</li>
+          <li><strong>配置加密上游 DNS (DoH)</strong>：
+            <div style="background: #1e1e1e; color: #d4d4d4; padding: 12px; border-radius: 6px; font-size: 0.82rem; margin: 10px 0;">
+              nameserver:<br>
+              &nbsp;&nbsp;- https://223.5.5.5/dns-query # 阿里国内加密DoH，解析国内网站<br>
+              &nbsp;&nbsp;- https://doh.pub/dns-query&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;# 腾讯国内加密DoH<br>
+              fallback:<br>
+              &nbsp;&nbsp;- https://1.1.1.1/dns-query&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;# Cloudflare国际加密DoH<br>
+              &nbsp;&nbsp;- https://8.8.8.8/dns-query&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;# Google国际加密DoH
+            </div>
+          </li>
+        </ul>
+
+        <h3 style="font-size: 1.1rem; color: #1e293b; margin: 16px 0 8px;">防线 3：关闭不必要的 IPv6 旁路</h3>
+        <p>如果当前使用的机场节点并未明确支持 IPv6，最稳妥的做法是在代理客户端设置中开启 <strong>「禁用 IPv6 (Disable IPv6)」</strong> 开关；或者在 Windows 虚拟网卡属性中取消勾选「Internet 协议版本 6 (TCP/IPv6)」，强行所有流量收拢至经过严格代理加密的 IPv4 专线隧道中。</p>
+
+        <h2 style="font-size: 1.35rem; color: #0078d4; margin: 28px 0 12px;">三、三大权威自测工具清单</h2>
+        <p>完成上述配置后，请务必依次打开以下三个国际权威安全检测网站，进行体检自测：</p>
+        <ol style="padding-left: 20px; line-height: 1.85;">
+          <li><strong>IPLeak (ipleak.net)</strong>：检测 IP 归属地与 DNS 地址。页面上呈现的几十个 DNS 解析服务器应全部位于香港、日本或美国，<strong>绝对不能出现任何一个带有“China Telecom/Unicom”字样的中国机房</strong>；</li>
+          <li><strong>BrowserLeaks (browserleaks.com/webrtc)</strong>：检测 WebRTC 是否被彻底阻断；</li>
+          <li><strong>Whoer (whoer.net)</strong>：综合伪装度评分测试，加固达标后综合匿名得分应达到 <strong>90% - 100%</strong>。</li>
+        </ol>
+      </div>
+
+      <footer style="margin-top: 36px; padding-top: 20px; border-top: 1px solid rgba(0,0,0,0.06); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px;">
+        <a href="article-18.html" class="btn-secondary">← 上一篇：软路由与全屋透明代理搭建</a>
+        <a href="article-20.html" class="btn-fluent">下一篇：机场跑路与杀猪盘套路深度揭秘 →</a>
+      </footer>
+    </article>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-container">
+      <div class="footer-bottom">
+        <p>© 2026 梯子当权 tizidangquan.online · 保护网络自由 · 保留所有权利。</p>
+      </div>
+    </div>
+  </footer>
+  <script src="../js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,59 @@
+# robots.txt for tizidangquan.online
+# Generated: 2026-10-25
+# Domain: https://tizidangquan.online
+
+User-agent: *
+Allow: /
+Allow: /articles/
+Allow: /assets/
+Allow: /css/
+Allow: /js/
+
+# Disallow sensitive internal files if any
+Disallow: /*.json$
+Disallow: /scratch/
+Disallow: /.git/
+
+# Major Search Engines Explicit Rules
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Baiduspider
+Allow: /
+
+User-agent: 360Spider
+Allow: /
+
+User-agent: Sogou web spider
+Allow: /
+
+User-agent: Yandex
+Allow: /
+
+# AI Search & Large Language Model Crawlers (GEO - Generative Engine Optimization)
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: Applebot
+Allow: /
+
+User-agent: Bytespider
+Allow: /
+
+# Sitemap Index Location
+Sitemap: https://tizidangquan.online/sitemap.xml
